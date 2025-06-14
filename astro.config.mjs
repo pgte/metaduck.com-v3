@@ -12,4 +12,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+
+  // Configure routing to remove /blog/ prefix
+  trailingSlash: 'never',
+  build: {
+    format: 'directory'
+  }
 });

@@ -6,102 +6,78 @@ author: "Pedro Teixeira"
 tags: ["databases", "history", "technology"]
 ---
 
-In the beginning of the electronic digital information systems, computers were used to perform computations. They were fed an input via a smart card, and an output would be printed out.
+## Databases
 
-Later came peripherals that could be used to store data between computations. Scientists and engineers invented tape drives and hard drives, and suddenly you could use computers to, not only perform calculations but also to remember information.
+The appearance of the term "database" coincided with the availability of [direct-access storage](https://en.wikipedia.org/wiki/Direct-access_storage_device) (mid-60's). The term represented a contrast with the tape-based systems of the past, allowing shared interactive use rather than batch processing.
 
-![IBM System 360 tape units](../assets/blog/3598455187_487060297d_z.jpg)
+## Network databases
 
-> By Andrew Back, published [here](https://www.flickr.com/photos/carrierdetect/3598455187)
+General-purpose database systems emerged during that time.
 
-As time went on, the capacity of these storage devices grew, as grew the uses that people and companies started giving them. They now relied on these devices to store important information like bank accounts balances, transactions, contracts, and other important facts.
+- [CODASYL](https://en.wikipedia.org/wiki/CODASYL): primary key, navigation relationships, or scanning.
+- [IBM IMS (Information Management System)](https://en.wikipedia.org/wiki/IBM_Information_Management_System), running on the [System/360](https://en.wikipedia.org/wiki/IBM_System/360), initially developed for [the Apollo program](https://en.wikipedia.org/wiki/Apollo_program). Strictly hierarchical.
 
-Initially, human operators were the only ones that could access these computers, a person whose job was to put and retrieve information from it. As more and more digital information started getting stored and retrieved, these operators started becoming a performance bottleneck.
+Both IMS and CODASYL classify as **network databases**.
 
-![Computer operator](../assets/blog/Computer-operator.jpg)
+## 1970's relational databases
 
-To address this, some people invented time-sharing computers and remote terminals, where multiple operators could now access and manipulate the same data set. These terminals were dumb, and transmitted text and keyboard events using a local network connection.
+[Edgar Codd](https://en.wikipedia.org/wiki/Edgar_F._Codd), at the time working for IBM on storage, became frustrated by the limitations imposed by network databases.
 
-![Mac](../assets/blog/Macintosh_128k_transparency.png)
+Initial idea: tables of fixed-length records. Different table for different types of identity.
 
-Sometime later came the Graphical User Interfaces; GUIs started becoming the standard way of accessing a data set. No longer you were running a text-based remote terminal that was executing on the same machine that had the data. Instead, an application was running on another computer and was accessing a database server via a local network. This database software was now exposing a generic network interface that application developers could use to access it. Now there was a more apparent separation of the application and the database management system.
+The relational part comes from the capability of entities referring to other entities.
 
-Sometimes this database system had to scale to accommodate not only multiple users on the same local network but also many more users on a wide area network. Since a single computer is serving this database, the hardware for these database management systems had to become more powerful (faster discs, more and faster RAM, fast CPUs).
+A relational database can express both hierarchical or navigational models, as well as its native tabular model.
 
-Then came the internet and with it, having to serve many more customers at the same time using the same type of technology. In modern online transaction-processing systems that work at such a large scale, you typically have at least three layers of software. In the example of a web application, you have the client UI that talks HTTP to a server that implements the business logic. This server may then, in turn, use other services or one or more databases to persist data.
+To query it, the author of the relational algebra proposed a set-oriented language, which would later spawn SQL.
 
-This database then becomes the single source of truth and also the bottleneck of performance and availability. If this server becomes overloaded or unavailable because of a bug, a network failure, or a hardware malfunction, this service can't operate, and with it, a company's service and source of revenue.
+Based on Codd's paper, [INGRES](<https://en.wikipedia.org/wiki/Ingres_(database)>) was created by two people at Berkeley ([Eugene Wong](https://en.wikipedia.org/wiki/Eugene_Wong) and [Michael Stonebraker](https://en.wikipedia.org/wiki/Michael_Stonebraker)).
 
-## Caching
+## Late 1970's: SQL DBMSs
 
-To address this problem, the consistent practice of several techniques has emerged since the early 00's. One of them is caching. Because of the continuous fall in the price of hardware, caching data in memory reduced the strain in these databases, alleviating the database from a portion of the read requests. With this, these database servers now had more resources available to dedicate to writes.
+IBM started working on an implementation of Codd's paper named [System R](https://en.wikipedia.org/wiki/IBM_System_R), first single-table and then later, in the late 70's, on a multi-table implementation.
 
-But it's not all roses. You may say that caching introduces some complexity into a system that, before, was using one source of truth. Now, you have a distributed system replicating data, and much effort has to go into ensuring consistency across these systems.
+Later, multi-user versions were developed and were tested by customers in 1978 and 1979, by which time a standardized language named SQL had been added.
 
-![Messy wool](../assets/blog/colorful-collection-wool-knitting-weaving-full-frame-shot-multi-colored-yarn-142087426.jpg)
+The success of these experiments led IBM to create a true production of System R known as SQL/DS and later, Database 2 ([DB2](https://en.wikipedia.org/wiki/IBM_Db2_Family)).
 
-Different applications may require different levels of consistency: a social network probably doesn't need to be as consistent as a banking application. But still, caching and cache invalidation are still hard problems to solve, specially when you're dealing with different failure modes.
+By around the same time, [Larry Ellison](https://en.wikipedia.org/wiki/Larry_Ellison) developed the [Oracle database](https://en.wikipedia.org/wiki/Oracle_Database), based off IBM's papers on System R, and released Oracle version 2 in 1979.
 
-## Divide and conquer
+Stonebraker took his learnings from INGRES and started a project named Postgres (now known as [PostgreSQL](https://en.wikipedia.org/wiki/PostgreSQL)), since then used in many mission-critical applications.
 
-Another solution was to partition the data, spreading it throughout many servers. The data is now somehow divided into different slices, and each slice is attributed to a different server. This partitioning technique, also commonly known as "sharding," allows a service to partially survive network, hardware or software problem, by containing a given failure to only a subset of the data.
+## 1980's on the desktop
 
-But this technique imposed a new problem to be solved. When operating on data on the same partition, it's relatively simple to keep the data consistent. But when a request happens where we have to perform changes in data that lives in different partitions, we now have a complex problem to solve.
+Spreadsheet software (like [Lotus 123](https://en.wikipedia.org/wiki/Lotus_1-2-3)) and database software (like [dBASE](https://en.wikipedia.org/wiki/DBase)) appeared for desktop computers. dBASE became a huge success during the 80's and 90's.
 
-What happens if, when serving a request that requires a change in two partitions A and B, partition A succeeds and B fails? You may have different solutions for this, depending on your consistency requirements.
+## Document databases
 
-You could schedule a reparation on partition B when it comes back alive by, for instance, inserting the operation on a local queue. By doing this, you risk that the data is inconsistent for some time. Again this may be fine for your application.
+Document databases emerged to meet the needs of applications requiring flexible schemas and fast iteration cycles—typical of modern web and mobile development. Instead of rigid tables and rows, data is stored as JSON or BSON documents, which can easily evolve without requiring migrations.
 
-Alternatively, you can roll back the change in partition A if you had already committed it. Still, if you had already committed the change in partition A, there was a window where the data would have been inconsistent while you were trying to operate partition B. Worse, what happens if the rolling back in partition A fails? To solve these problems and guarantee consistency, we would need to enter the realm of distributed transactions, transaction monitors, and two-phase commit protocols.
+By avoiding join operations and relying on nested data structures, these databases can provide performance benefits for read-heavy workloads. Popular document stores include [MongoDB](https://en.wikipedia.org/wiki/MongoDB), [CouchDB](https://en.wikipedia.org/wiki/CouchDB), and Amazon DocumentDB. Their design also makes them well-suited to horizontal scaling, often via sharding.
 
-Again, this is a lot of added complexity. Now, all of a sudden, you have to manage an ad hoc distributed system with many new corner cases, potential bugs, and failure modes.
+## Now
 
-## Synchronous replication for consistency
+In recent years, the explosive growth of data and the ubiquity of cloud computing have driven demand for massively distributed databases with high availability and fault tolerance. However, the [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem) highlights a fundamental tradeoff: in the presence of a network partition, a distributed system can guarantee either **consistency** or **availability**, but not both.
 
-But what if we had multiple servers but had them replicate synchronously between each other? For instance, if we had two servers, a write to one server would only succeed if and only if that server managed to replicate it to the other server successfully.
+As a result, many modern systems favor **eventual consistency**—a model in which all updates will propagate through the system over time, and all replicas will eventually become consistent, assuming no new updates are made. This approach allows systems to remain available even when parts of the network are unreachable.
 
-Synchronous replication has the advantage that it keeps consistency and that we can now distribute the read operations. Still, now, this system is not resistant to malfunctions. In the face of a network, hardware, or software failure in one server, the other server is not able to perform writes because it's not able to replicate the operation synchronously. If consistency is paramount, that write operation has to fail.
+Examples of distributed databases embracing this model include:
 
-## Loosen the consistency requirements
+- **[Cassandra](https://en.wikipedia.org/wiki/Apache_Cassandra)** – known for high write throughput and tunable consistency.
+- **[Amazon DynamoDB](https://en.wikipedia.org/wiki/Amazon_DynamoDB)** – inspired by the Dynamo system described in Amazon's influential whitepaper.
+- **[Riak](https://en.wikipedia.org/wiki/Riak)** – designed for fault tolerance and ease of scaling.
 
-As we saw, if you want high availability in a distributed system, you can't have strict consistency. If, in your application, you can relax consistency, you have the chance to be more available in the face of failure.
+## The future
 
-![Relax](../assets/blog/relaxing-2812691_960_720.jpg)
+The landscape of databases continues to evolve. Trends shaping the future include:
 
-Around this time (the '00s), a new set of database technologies started appearing that catered to this better-inconsistent-than-offline type of internet business.
+- **NewSQL**: efforts to combine the consistency and usability of traditional SQL systems with the scalability of NoSQL. Examples include [CockroachDB](https://en.wikipedia.org/wiki/CockroachDB), [Google Spanner](<https://en.wikipedia.org/wiki/Spanner_(database)>), and [TiDB](https://en.wikipedia.org/wiki/TiDB).
+- **Multi-model databases**: databases like [ArangoDB](https://en.wikipedia.org/wiki/ArangoDB) and [OrientDB](https://en.wikipedia.org/wiki/OrientDB) that support documents, graphs, key-value pairs, and relational data, all in one system.
+- **Cloud-native and serverless databases**: platforms like [Firebase](https://en.wikipedia.org/wiki/Firebase), [Fauna](https://fauna.com/), and [PlanetScale](https://planetscale.com/) are offering fully managed, globally distributed databases tailored for modern development workflows.
+- **AI and vector databases**: the rise of AI and large language models has driven demand for databases that support high-dimensional vector storage and similarity search, such as [Pinecone](https://www.pinecone.io/), [Weaviate](https://weaviate.io/), and [FAISS](https://github.com/facebookresearch/faiss).
 
-In these new types of data management systems, you have different servers that the clients can use to perform write operations. Each of these servers replicates the operations to the other members of the cluster in the background, asynchronously. In this scenario, replication is a "best-effort" endeavor, where no guarantees are given for when it has occurred.
+## Conclusion
 
-Relaxing the consistency requirements can allow these systems to be more available (machines can go down as long as there are other machines in the cluster working). Still, not knowing whether the data stays consistent between consecutive reads or between a write and a read may be challenging to the programmer or the user.
+From batch-processed tapes to globally distributed, AI-powered systems, databases have undergone radical transformations—always driven by the needs of applications and the capabilities of the underlying hardware. While no single model fits all use cases, the diversity of database systems today reflects the richness of modern computing and the continuing push for performance, flexibility, and scale.
 
-For instance, imagine that two different clients write different values to the same document to different servers at about the same time. Both servers are going to try to replicate different versions of the same document to others. Depending on the order, one of them may win on a given server, and the other may win on another. Ending up with different versions on different servers violates eventual consistency, as the values may never converge across different servers.
-
-We can solve this by versioning each document. Instead of merely using a single version number, we need a way to track the changes that happen in this distributed system. Version vectors are a common way to solve this. In this version representation, each server has an independent counter in this vector that it increments when the data changes locally. When replicating that document to other servers, this version vector travels with it. This way, servers can now compare two versions of the same document and, looking at the version vector, infer causality. They can now know whether a version of the document happened before, after, or is concurrent to another version.
-
-When deciding what to do with two versions and determining that one depends on the other, we can safely discard the older one. But what if the changes happened independently of each other?
-
-## Managing conflicts
-
-One possibility is to do nothing. Store both these conflicting versions, and serve them both if a client asks for that piece of data, turning this problem into an application or user problem. Now the client can have more than one version of the same document, and it can choose to either a) show the conflict to the user or b) solve the conflict, writing a new version.
-
-Another possibility is to avoid conflicts altogether. By using types of data that are conflict-free, merging conflicts can be done automatically by each of the participants. Using these types of data called "Conflict-free Replicated Data Types," we can guarantee that the servers converge to the same value. And that they can do so independently of the perceived order of operations.
-
-But still, the client can read stale data. If, for instance, the client writes to a server and that server goes down immediately after, the client now can only read a stale piece of data from any of the other servers. What can we do about this?
-
-## Mitigating the chance of stale reads
-
-Instead of writing the document to one server, let's say that the client tries to talk to all the servers responsible for that document at the same time. But instead of waiting for all of them to respond, the client only waits for _a majority_ of them. Since some of the participants can be down at any given time, this guarantees that you only need a majority to be available. After this, when serving another request, if the client wants to read back the value, it can query all the servers. As long as it gets a response from the majority of the servers, the client is confident that it has obtained the latest version.
-
-Since the data is versioned, it can distinguish from different versions being returned from different servers, discarding the outdated ones, and merging concurrent ones.
-
-## Local-first
-
-![Farmers market](../assets/blog/farmers-market-1495206921lwW.jpg)
-
-The devices that our users use are increasingly more and more powerful. Most of us carry in their pockets what would look like a supercomputer only a few years ago. Having this amount of power spread throughout the world allows us to shift more and more computational logic from the server to the client. Doing so not only alleviates the application servers but also makes our applications feel faster. But what about data?
-
-Network latency is a fact of this universe. Having an application that has to contact a server and wait for its response for every operation is a cost that is often visible to the users, making the application feel sluggish. If we have started burdening the clients with more and more computations, why not do the same with data operations?
-
-In fact, for some applications, we can use the same principles of eventually consistent data and do just that. Instead of having to rely on a server for every data query or operation, we can instead perform everything locally, and in the background sync these changes to the server. The application type permitting, we can perform the changes locally and let the user carry on, making the application feel snappier and more responsive.
-
-By treating the device as one more node in a decentralized database, we can apply some of the principles we have discussed here. By doing so, we can not only make applications more responsive, but we can also allow them to be more tolerant of failure. These applications can now work offline or when the back-end service is unavailable for some reason.
+As data continues to grow in size and importance, the evolution of databases remains one of the most critical stories in the history of computing.

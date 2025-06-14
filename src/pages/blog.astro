@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
@@ -20,7 +20,7 @@ const sortedPosts = posts.sort((a, b) => {
           <article class="bg-white dark:bg-white rounded-lg shadow-md p-6">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-900 mb-2">
               <a
-                href={`/blog/${post.slug}`}
+                href={`/${post.slug}`}
                 class="hover:text-blue-600 dark:hover:text-blue-600"
               >
                 {post.data.title}

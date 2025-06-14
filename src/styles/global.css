@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @layer base {
+  body {
+    @apply font-['Merriweather',_Georgia,_serif];
+  }
+
   h1 {
     @apply text-4xl font-bold text-gray-900 mb-6;
   }
