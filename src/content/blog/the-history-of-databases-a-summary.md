@@ -10,6 +10,8 @@ tags: ["databases", "history", "technology"]
 
 The appearance of the term "database" coincided with the availability of [direct-access storage](https://en.wikipedia.org/wiki/Direct-access_storage_device) (mid-60's). The term represented a contrast with the tape-based systems of the past, allowing **shared interactive use** rather than batch processing.
 
+![Early computer operator](/images/blog/Computer-operator.jpg)
+
 ## Network databases
 
 General-purpose database systems emerged during that time.
@@ -47,6 +49,8 @@ Stonebraker took his learnings from INGRES and started a project named **Postgre
 
 ## 1980's on the desktop
 
+![Early computer system](/images/blog/Macintosh_128k_transparency.png)
+
 Spreadsheet software (like [Lotus 123](https://en.wikipedia.org/wiki/Lotus_1-2-3)) and database software (like [dBASE](https://en.wikipedia.org/wiki/DBase)) appeared for desktop computers. **dBASE** became a huge success during the 80's and 90's.
 
 ## Document databases
@@ -56,6 +60,8 @@ Document databases emerged to meet the needs of applications requiring **flexibl
 By avoiding join operations and relying on nested data structures, these databases can provide performance benefits for read-heavy workloads. Popular document stores include [MongoDB](https://en.wikipedia.org/wiki/MongoDB), [CouchDB](https://en.wikipedia.org/wiki/CouchDB), and **Amazon DocumentDB**. Their design also makes them well-suited to horizontal scaling, often via sharding.
 
 ## Now
+
+![Distributed computing](/images/blog/distributed-computing.jpg)
 
 In recent years, the explosive growth of data and the ubiquity of cloud computing have driven demand for **massively distributed databases** with high availability and fault tolerance. However, the [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem) highlights a fundamental tradeoff: in the presence of a network partition, a distributed system can guarantee either **consistency** or **availability**, but not both.
 
@@ -68,6 +74,8 @@ Examples of distributed databases embracing this model include:
 - **[Riak](https://en.wikipedia.org/wiki/Riak)** – designed for fault tolerance and ease of scaling.
 
 ## The future
+
+![Future possibilities](/images/blog/future-possibilities.jpg)
 
 The landscape of databases continues to evolve. Trends shaping the future include:
 
