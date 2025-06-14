@@ -7,5 +7,4 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
   ],
-  darkMode: 'class',
 } 
