@@ -22,7 +22,7 @@
   }
   
   p {
-    @apply text-gray-800 mb-4 leading-relaxed;
+    @apply text-gray-800 mb-4 leading-7;
   }
   
   a {
