@@ -47,13 +47,6 @@ const {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.url).href} />
-
-    <!-- OEmbed -->
-    <link
-      rel="alternate"
-      type="application/json+oembed"
-      href={`${Astro.url.origin}/api/oembed?url=${encodeURIComponent(url)}`}
-    />
   </head>
   <body class="min-h-screen bg-white dark:bg-white">
     <header class="border-b border-gray-200">
