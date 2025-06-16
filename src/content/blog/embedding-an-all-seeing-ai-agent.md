@@ -4,7 +4,12 @@ description: "Exploring the challenges and possibilities of bringing data closer
 author: "Pedro Teixeira"
 date: 2025-06-15
 tags: ["ai", "LLMs", "agent", "app"]
+image: "/images/blog/ai_agent.png"
 ---
+
+> ## TLDR;
+>
+> Instead of building a complex API surface for your AI agent, make it interact with your app like a human user would. Use the Accessibility Object Model (AOM) to give your agent "eyes" to see the UI and "hands" to interact with it. This approach is simpler, more maintainable, and has the bonus of making your app more accessible for screen readers.
 
 ![AI Agent](/images/blog/ai_agent.png)
 
@@ -30,7 +35,7 @@ Imagine a CRM. Fetching a list of accounts? One tool. Fetching a contact's activ
 
 And it gets worse when it comes to actions: creating a note, sending an invite, tagging a user, exporting a report—all of these are side-effects, and each needs its own entry point. **This toolset bloats fast**.
 
-There's a better way.
+I believe there can be a better way.
 
 ## Make the Agent a Power User
 
