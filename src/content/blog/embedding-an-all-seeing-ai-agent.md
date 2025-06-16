@@ -1,6 +1,6 @@
 ---
 title: "Embedding an All-Seeing AI Agent"
-description: "Exploring the challenges and possibilities of bringing data closer to edge compute, and imagining a future of non-uniform data access for distributed systems."
+description: "Instead of building a complex API surface for your AI agent, make it interact with your app like a human user would."
 author: "Pedro Teixeira"
 date: 2025-06-15
 tags: ["ai", "LLMs", "agent", "app"]
