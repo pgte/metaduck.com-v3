@@ -283,6 +283,8 @@ This keeps sensitive data out of your codebase while providing the configuration
 
 ## The Bottom Line
 
+![Deploying PRs](/images/blog/astronaut-wonderful.jpg)
+
 Our local sandbox strikes a balance between simplicity and functionality. It's not a perfect replica of AWS—and it doesn't need to be. Instead, it provides a fast, reliable development environment that lets you focus on building features rather than managing infrastructure.
 
 The key insight is that you don't need Docker containers or complex orchestration to have a great local development experience. Sometimes the simplest solution—running services directly on your machine with smart proxying—is the most effective.
