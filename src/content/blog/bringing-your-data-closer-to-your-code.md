@@ -11,10 +11,10 @@ tags:
     "serverless",
     "consistency",
   ]
-image: "/images/blog/light-hearted-network.jpg"
+image: "/images/blog/distributed_dream.jpg"
 ---
 
-![Light-hearted network illustration](/images/blog/light-hearted-network.jpg)
+![Distributed dream](/images/blog/distributed_dream.jpg)
 
 Infrastructure, as we know, can be a challenging subject. We've seen a lot of movement towards **serverless architectures**, and for good reason. They promise to abstract away the operational burden, letting us focus more on the code that delivers value. Add **Content Delivery Networks (CDNs)** into the mix, especially those that let you run functions at the edge, and things start to feel pretty good. You can get your code running incredibly close to your users, reducing latency and making for a snappier experience.
 
