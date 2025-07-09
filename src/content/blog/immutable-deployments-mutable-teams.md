@@ -97,7 +97,7 @@ So here's the takeaway:
 - **Immutable deployments** make your systems repeatable, stable, boring.
 - **Mutable teams** make your people adaptable, resilient, alive.
 
-Treat servers like [cattle, not pets](https://en.wikipedia.org/wiki/Pets_vs._cattle). Treat people like _people_ — with the trust and freedom to keep evolving.
+Treat servers like cattle, not pets. Treat people like _people_ — with the trust and freedom to keep evolving.
 
 The more your infrastructure stays the same, the more your team must keep changing.
 
