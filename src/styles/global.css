@@ -49,6 +49,26 @@
     @apply border-l-4 border-gray-300 pl-4 italic my-4;
   }
   
+  table {
+    @apply w-full border-collapse border border-gray-300 my-6;
+  }
+  
+  th {
+    @apply bg-gray-50 border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900;
+  }
+  
+  td {
+    @apply border border-gray-300 px-4 py-3 text-gray-800;
+  }
+  
+  tr:nth-child(even) {
+    @apply bg-gray-50;
+  }
+  
+  tr:hover {
+    @apply bg-gray-100;
+  }
+  
   code {
     @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
   }
