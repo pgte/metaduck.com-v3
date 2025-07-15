@@ -52,9 +52,68 @@
       }),
       (e.__SV = 1));
   })(document, window.posthog || []);
+
   posthog.init("phc_NqiGUIXWaL0Bl2nE3UI34zpJLlOd7k60JyOSgHq3VWc", {
     api_host: "https://eu.i.posthog.com",
     defaults: "2025-05-24",
     person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+    capture_pageview: false, // Disable automatic pageview capture since we'll handle it manually
   });
+
+  // Track initial page view
+  posthog.capture("$pageview", {
+    $current_url: window.location.href,
+    $pathname: window.location.pathname,
+    $title: document.title,
+  });
+
+  // Track page views on client-side navigation
+  let currentUrl = window.location.href;
+
+  // Function to track page view
+  function trackPageView() {
+    const newUrl = window.location.href;
+    if (newUrl !== currentUrl) {
+      currentUrl = newUrl;
+      posthog.capture("$pageview", {
+        $current_url: newUrl,
+        $pathname: window.location.pathname,
+        $title: document.title,
+      });
+    }
+  }
+
+  // Listen for navigation events
+  if (typeof window !== "undefined") {
+    // Track on popstate (back/forward navigation)
+    window.addEventListener("popstate", trackPageView);
+
+    // Track on pushstate/replacestate (programmatic navigation)
+    const originalPushState = history.pushState;
+    const originalReplaceState = history.replaceState;
+
+    history.pushState = function (...args) {
+      originalPushState.apply(history, args);
+      setTimeout(trackPageView, 0);
+    };
+
+    history.replaceState = function (...args) {
+      originalReplaceState.apply(history, args);
+      setTimeout(trackPageView, 0);
+    };
+
+    // Track clicks on internal links
+    document.addEventListener("click", function (e) {
+      const target = e.target.closest("a");
+      if (
+        target &&
+        target.href &&
+        target.href.startsWith(window.location.origin) &&
+        !target.target
+      ) {
+        // Small delay to ensure the navigation happens
+        setTimeout(trackPageView, 100);
+      }
+    });
+  }
 </script>
