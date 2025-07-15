@@ -53,40 +53,71 @@
       (e.__SV = 1));
   })(document, window.posthog || []);
 
+  // Initialize PostHog
   posthog.init("phc_NqiGUIXWaL0Bl2nE3UI34zpJLlOd7k60JyOSgHq3VWc", {
     api_host: "https://eu.i.posthog.com",
     defaults: "2025-05-24",
-    person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+    person_profiles: "identified_only",
     capture_pageview: false, // Disable automatic pageview capture since we'll handle it manually
+    debug: false, // Set to true for debugging
   });
 
-  // Track initial page view
-  posthog.capture("$pageview", {
-    $current_url: window.location.href,
-    $pathname: window.location.pathname,
-    $title: document.title,
-  });
-
-  // Track page views on client-side navigation
-  let currentUrl = window.location.href;
-
-  // Function to track page view
-  function trackPageView() {
-    const newUrl = window.location.href;
-    if (newUrl !== currentUrl) {
-      currentUrl = newUrl;
-      posthog.capture("$pageview", {
-        $current_url: newUrl,
-        $pathname: window.location.pathname,
-        $title: document.title,
-      });
+  // Debug function
+  function debugLog(message, data) {
+    if (window.posthog && window.posthog.debug) {
+      console.log("[PostHog Debug]", message, data);
     }
   }
 
-  // Listen for navigation events
+  // Track page view with comprehensive data
+  function trackPageView(url, title, referrer) {
+    if (typeof window !== "undefined" && window.posthog) {
+      const pageData = {
+        $current_url: url || window.location.href,
+        $pathname: new URL(url || window.location.href).pathname,
+        $title: title || document.title,
+        $referrer: referrer || document.referrer,
+        $host: window.location.host,
+        $search: window.location.search,
+        $hash: window.location.hash,
+      };
+
+      debugLog("Tracking pageview", pageData);
+      posthog.capture("$pageview", pageData);
+    }
+  }
+
+  // Track initial page view when DOM is ready
+  function trackInitialPageView() {
+    trackPageView();
+  }
+
+  // Initialize tracking when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", trackInitialPageView);
+  } else {
+    trackInitialPageView();
+  }
+
+  // Track navigation events
   if (typeof window !== "undefined") {
+    let currentUrl = window.location.href;
+    let navigationTimeout;
+
+    // Debounced page view tracking
+    function debouncedTrackPageView() {
+      clearTimeout(navigationTimeout);
+      navigationTimeout = setTimeout(function () {
+        const newUrl = window.location.href;
+        if (newUrl !== currentUrl) {
+          currentUrl = newUrl;
+          trackPageView();
+        }
+      }, 100);
+    }
+
     // Track on popstate (back/forward navigation)
-    window.addEventListener("popstate", trackPageView);
+    window.addEventListener("popstate", debouncedTrackPageView);
 
     // Track on pushstate/replacestate (programmatic navigation)
     const originalPushState = history.pushState;
@@ -94,25 +125,41 @@
 
     history.pushState = function (...args) {
       originalPushState.apply(history, args);
-      setTimeout(trackPageView, 0);
+      debouncedTrackPageView();
     };
 
     history.replaceState = function (...args) {
       originalReplaceState.apply(history, args);
-      setTimeout(trackPageView, 0);
+      debouncedTrackPageView();
     };
 
-    // Track clicks on internal links
+    // Track clicks on internal links (for Astro's static navigation)
     document.addEventListener("click", function (e) {
       const target = e.target.closest("a");
       if (
         target &&
         target.href &&
         target.href.startsWith(window.location.origin) &&
-        !target.target
+        !target.target &&
+        !target.hasAttribute("download")
       ) {
-        // Small delay to ensure the navigation happens
-        setTimeout(trackPageView, 100);
+        // Track the navigation immediately
+        trackPageView(target.href, document.title, window.location.href);
+
+        // Also track as a custom event for better analytics
+        posthog.capture("internal_link_clicked", {
+          link_url: target.href,
+          link_text: target.textContent?.trim() || "",
+          current_page: window.location.pathname,
+        });
+      }
+    });
+
+    // Track when page becomes visible (for better SPA tracking)
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) {
+        // Page became visible, track as a page view
+        trackPageView();
       }
     });
   }

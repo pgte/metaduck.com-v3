@@ -1,47 +1,60 @@
-# Astro Starter Kit: Minimal
+# Metaduck
 
-```sh
-pnpm create astro@latest -- --template minimal
+A blog about technology, programming, and more.
+
+## Analytics
+
+This site uses PostHog for analytics tracking. The integration is configured to track:
+
+- **Page views**: Automatic tracking on initial page load and client-side navigation
+- **Internal link clicks**: Custom events when users click internal links
+- **Navigation events**: Back/forward navigation and programmatic routing
+
+### PostHog Configuration
+
+- **Project ID**: `phc_NqiGUIXWaL0Bl2nE3UI34zpJLlOd7k60JyOSgHq3VWc`
+- **API Host**: `https://eu.i.posthog.com`
+- **Person Profiles**: Identified only
+- **Debug Mode**: Disabled by default (set `debug: true` in `src/components/posthog.astro` to enable)
+
+### Tracking Features
+
+1. **Automatic Page View Tracking**: Tracks page views on:
+
+   - Initial page load
+   - Browser back/forward navigation
+   - Programmatic navigation (pushState/replaceState)
+   - Internal link clicks
+   - Page visibility changes
+
+2. **Enhanced Data**: Each page view includes:
+
+   - Current URL and pathname
+   - Page title
+   - Referrer information
+   - Host, search parameters, and hash
+
+3. **Custom Events**: Additional tracking for:
+   - Internal link clicks with link text and destination
+   - Navigation patterns
+
+### Troubleshooting
+
+To debug PostHog tracking:
+
+1. Enable debug mode by setting `debug: true` in the PostHog initialization
+2. Open browser developer tools and check the console for `[PostHog Debug]` messages
+3. Verify events are being sent to PostHog dashboard
+
+## Development
+
+```bash
+npm install
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Build
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
