@@ -433,4 +433,4 @@ By eliminating traditional control structures and embracing auto-mapping, we cre
 
 ---
 
-_If you're interested in building similar systems, I'd love to hear about your experiences. You can find me on [Twitter](https://twitter.com/pedroteixeira) or check out my other posts on [metaduck.com](https://metaduck.com)._
+_If you're interested in building similar systems, I'd love to hear about your experiences. You can find me on [Twitter](https://twitter.com/pgte) or check out my other posts on [metaduck.com](https://metaduck.com)._
