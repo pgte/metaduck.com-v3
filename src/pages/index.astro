@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
 const recentPosts = posts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+  .slice(0, 5);
 ---
 
 <Layout title="Welcome to Metaduck">
