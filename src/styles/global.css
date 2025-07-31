@@ -83,33 +83,86 @@
   }
   
   code {
-    @apply bg-slate-800/80 px-2 py-1 rounded text-sm font-mono text-green-300 border border-green-500/50;
+    @apply bg-slate-800/80 px-2 py-1 rounded text-sm font-['Cascadia_Code',_monospace] text-green-300 border border-green-500/50;
     text-shadow: 0 0 3px rgba(0, 255, 65, 0.4);
     box-shadow: 0 0 8px rgba(0, 255, 65, 0.2), inset 0 0 4px rgba(0, 255, 65, 0.1);
+    font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+    animation: scan-line 3s ease-in-out infinite;
   }
   
   pre {
     @apply bg-slate-800/90 p-6 rounded-lg overflow-x-auto my-6 border border-green-500/50;
     box-shadow: 0 0 20px rgba(0, 255, 65, 0.15), inset 0 0 8px rgba(0, 255, 65, 0.05);
+    position: relative;
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  pre::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  pre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    animation: scan-top 4s ease-in-out infinite;
   }
   
   pre code {
-    @apply bg-transparent p-0 border-none shadow-none text-green-200;
+    @apply bg-transparent p-0 border-none shadow-none text-green-200 font-['Cascadia_Code',_monospace];
     text-shadow: 0 0 4px rgba(0, 255, 65, 0.5);
+    font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1;
+    position: relative;
+    z-index: 1;
   }
 
-  /* Futuristic syntax highlighting */
+  /* Futuristic scan animations */
+  @keyframes scan-line {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  @keyframes scan-top {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Enhanced syntax highlighting with pulsing effects */
   .token.comment,
   .token.prolog,
   .token.doctype,
   .token.cdata {
     @apply text-cyan-400;
-    text-shadow: 0 0 4px rgba(34, 211, 238, 0.6);
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.8), 0 0 16px rgba(34, 211, 238, 0.4);
+    animation: pulse-cyan 3s ease-in-out infinite;
   }
 
   .token.punctuation {
     @apply text-orange-300;
-    text-shadow: 0 0 4px rgba(251, 146, 60, 0.6);
+    text-shadow: 0 0 8px rgba(251, 146, 60, 0.8), 0 0 16px rgba(251, 146, 60, 0.4);
+    animation: pulse-orange 2.5s ease-in-out infinite;
   }
 
   .token.property,
@@ -119,7 +172,8 @@
   .token.constant,
   .token.symbol {
     @apply text-purple-400;
-    text-shadow: 0 0 4px rgba(168, 85, 247, 0.6);
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.8), 0 0 16px rgba(168, 85, 247, 0.4);
+    animation: pulse-purple 3.5s ease-in-out infinite;
   }
 
   .token.selector,
@@ -128,7 +182,8 @@
   .token.char,
   .token.builtin {
     @apply text-yellow-300;
-    text-shadow: 0 0 4px rgba(253, 224, 71, 0.6);
+    text-shadow: 0 0 8px rgba(253, 224, 71, 0.8), 0 0 16px rgba(253, 224, 71, 0.4);
+    animation: pulse-yellow 2s ease-in-out infinite;
   }
 
   .token.operator,
@@ -137,27 +192,72 @@
   .language-css .token.string,
   .style .token.string {
     @apply text-pink-400;
-    text-shadow: 0 0 4px rgba(236, 72, 153, 0.6);
+    text-shadow: 0 0 8px rgba(236, 72, 153, 0.8), 0 0 16px rgba(236, 72, 153, 0.4);
+    animation: pulse-pink 2.8s ease-in-out infinite;
   }
 
   .token.atrule,
   .token.attr-value,
   .token.keyword {
     @apply text-blue-400;
-    text-shadow: 0 0 4px rgba(96, 165, 250, 0.6);
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.8), 0 0 16px rgba(96, 165, 250, 0.4);
+    animation: pulse-blue 3.2s ease-in-out infinite;
   }
 
   .token.function,
   .token.class-name {
     @apply text-emerald-400;
-    text-shadow: 0 0 4px rgba(52, 211, 153, 0.6);
+    text-shadow: 0 0 8px rgba(52, 211, 153, 0.8), 0 0 16px rgba(52, 211, 153, 0.4);
+    animation: pulse-emerald 2.3s ease-in-out infinite;
   }
 
   .token.regex,
   .token.important,
   .token.variable {
     @apply text-red-400;
-    text-shadow: 0 0 4px rgba(248, 113, 113, 0.6);
+    text-shadow: 0 0 8px rgba(248, 113, 113, 0.8), 0 0 16px rgba(248, 113, 113, 0.4);
+    animation: pulse-red 2.7s ease-in-out infinite;
+  }
+
+  /* Retro sci-fi pulse animations */
+  @keyframes pulse-cyan {
+    0%, 100% { text-shadow: 0 0 8px rgba(34, 211, 238, 0.8), 0 0 16px rgba(34, 211, 238, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(34, 211, 238, 1), 0 0 24px rgba(34, 211, 238, 0.6); }
+  }
+
+  @keyframes pulse-orange {
+    0%, 100% { text-shadow: 0 0 8px rgba(251, 146, 60, 0.8), 0 0 16px rgba(251, 146, 60, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(251, 146, 60, 1), 0 0 24px rgba(251, 146, 60, 0.6); }
+  }
+
+  @keyframes pulse-purple {
+    0%, 100% { text-shadow: 0 0 8px rgba(168, 85, 247, 0.8), 0 0 16px rgba(168, 85, 247, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(168, 85, 247, 1), 0 0 24px rgba(168, 85, 247, 0.6); }
+  }
+
+  @keyframes pulse-yellow {
+    0%, 100% { text-shadow: 0 0 8px rgba(253, 224, 71, 0.8), 0 0 16px rgba(253, 224, 71, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(253, 224, 71, 1), 0 0 24px rgba(253, 224, 71, 0.6); }
+  }
+
+  @keyframes pulse-pink {
+    0%, 100% { text-shadow: 0 0 8px rgba(236, 72, 153, 0.8), 0 0 16px rgba(236, 72, 153, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(236, 72, 153, 1), 0 0 24px rgba(236, 72, 153, 0.6); }
+  }
+
+  @keyframes pulse-blue {
+    0%, 100% { text-shadow: 0 0 8px rgba(96, 165, 250, 0.8), 0 0 16px rgba(96, 165, 250, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(96, 165, 250, 1), 0 0 24px rgba(96, 165, 250, 0.6); }
+  }
+
+  @keyframes pulse-emerald {
+    0%, 100% { text-shadow: 0 0 8px rgba(52, 211, 153, 0.8), 0 0 16px rgba(52, 211, 153, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(52, 211, 153, 1), 0 0 24px rgba(52, 211, 153, 0.6); }
+  }
+
+  @keyframes pulse-red {
+    0%, 100% { text-shadow: 0 0 8px rgba(248, 113, 113, 0.8), 0 0 16px rgba(248, 113, 113, 0.4); }
+    50% { text-shadow: 0 0 12px rgba(248, 113, 113, 1), 0 0 24px rgba(248, 113, 113, 0.6); }
   }
 
   .token.important,
