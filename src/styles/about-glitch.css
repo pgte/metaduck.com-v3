@@ -1,0 +1,384 @@
+/* Wild Glitchy Effects for About Page */
+
+/* Matrix rain background effect */
+.about-matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 255, 65, 0.02) 50%,
+    transparent 100%
+  );
+  animation: matrix-fall 20s infinite linear;
+}
+
+@keyframes matrix-fall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* CRT distortion effect */
+.about-crt-distortion {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-crt-distortion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.03) 2px,
+    rgba(0, 255, 65, 0.03) 4px
+  );
+  pointer-events: none;
+  animation: crt-scan-about 0.1s infinite linear;
+  z-index: 10;
+}
+
+@keyframes crt-scan-about {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Glitch text effect for main title */
+.about-glitch-title {
+  position: relative;
+}
+
+.about-glitch-title::before,
+.about-glitch-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.about-glitch-title::before {
+  animation: glitch-red 2s infinite;
+  color: #ff0000;
+  z-index: -1;
+}
+
+.about-glitch-title::after {
+  animation: glitch-blue 2.5s infinite;
+  color: #00ffff;
+  z-index: -2;
+}
+
+@keyframes glitch-red {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+}
+
+@keyframes glitch-blue {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(1px, -1px); }
+  40% { transform: translate(1px, 1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(-1px, 1px); }
+}
+
+/* Cyberpunk avatar effect */
+.about-avatar-glitch {
+  position: relative;
+}
+
+.about-avatar-glitch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
+  animation: avatar-scan 3s infinite linear;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@keyframes avatar-scan {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Glitchy bio text */
+.about-bio-glitch {
+  position: relative;
+}
+
+.about-bio-glitch p {
+  position: relative;
+}
+
+/* Cyberpunk card effects */
+.about-cyber-card {
+  position: relative;
+  overflow: hidden;
+  animation: cyber-card-pulse 6s infinite;
+}
+
+.about-cyber-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+  animation: cyber-scan 4s infinite ease-in-out;
+  z-index: 1;
+}
+
+.about-cyber-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
+  animation: cyber-glow 8s infinite;
+  z-index: 0;
+}
+
+@keyframes cyber-card-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2), 0 0 40px rgba(0, 255, 65, 0.1);
+  }
+}
+
+@keyframes cyber-scan {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+@keyframes cyber-glow {
+  0%, 100% { 
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
+  }
+  25% { 
+    background: 
+      radial-gradient(circle at 30% 30%, rgba(0, 255, 65, 0.07) 0%, transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(0, 255, 65, 0.05) 0%, transparent 50%);
+  }
+  50% { 
+    background: 
+      radial-gradient(circle at 40% 40%, rgba(0, 255, 65, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 60% 60%, rgba(0, 255, 65, 0.04) 0%, transparent 50%);
+  }
+  75% { 
+    background: 
+      radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.06) 0%, transparent 50%);
+  }
+}
+
+/* Glitchy section headers */
+.about-section-header {
+  position: relative;
+}
+
+.about-section-header::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ff0000;
+  opacity: 0.5;
+  animation: section-red-glitch 3s infinite;
+  z-index: -1;
+}
+
+@keyframes section-red-glitch {
+  0%, 100% { transform: translate(0); opacity: 0.5; }
+  50% { transform: translate(1px, -1px); opacity: 0.3; }
+}
+
+/* Cyberpunk link effects */
+.about-cyber-link {
+  position: relative;
+}
+
+.about-cyber-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.2), transparent);
+  animation: link-scan 2s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes link-scan {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Data corruption effect */
+.about-data-corruption {
+  position: relative;
+  animation: data-corruption 10s infinite;
+}
+
+@keyframes data-corruption {
+  0%, 100% { 
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2);
+  }
+  10% { 
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2), 0 0 5px rgba(255, 0, 0, 0.3);
+  }
+  20% { 
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2), 0 0 5px rgba(0, 255, 255, 0.3);
+  }
+  30% { 
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2), 0 0 5px rgba(255, 255, 0, 0.3);
+  }
+  40% { 
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2), 0 0 5px rgba(255, 0, 255, 0.3);
+  }
+  50% { 
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2);
+  }
+}
+
+/* Holographic effect for publications */
+.about-holographic {
+  position: relative;
+}
+
+.about-holographic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(0, 255, 255, 0.1) 25%,
+    rgba(255, 0, 255, 0.1) 50%,
+    rgba(255, 255, 0, 0.1) 75%,
+    transparent 100%
+  );
+  animation: holographic-scan 4s infinite linear;
+  z-index: 1;
+}
+
+@keyframes holographic-scan {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Terminal boot sequence effect */
+.about-boot-sequence {
+  position: relative;
+}
+
+/* Glitch overlay for entire page */
+.about-glitch-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.05;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(255, 0, 0, 0.1) 1px,
+    rgba(255, 0, 0, 0.1) 2px
+  );
+  animation: glitch-overlay 0.1s infinite linear;
+}
+
+@keyframes glitch-overlay {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2px); }
+}
+
+/* Cyberpunk noise effect */
+.about-cyber-noise {
+  position: relative;
+}
+
+.about-cyber-noise::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 255, 65, 0.02) 0%, transparent 50%);
+  animation: cyber-noise 10s infinite;
+  z-index: 1;
+}
+
+@keyframes cyber-noise {
+  0%, 100% { 
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(0, 255, 65, 0.02) 0%, transparent 50%);
+  }
+  25% { 
+    background-image: 
+      radial-gradient(circle at 35% 35%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 65% 65%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
+  }
+  50% { 
+    background-image: 
+      radial-gradient(circle at 45% 45%, rgba(0, 255, 65, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 55% 55%, rgba(0, 255, 65, 0.04) 0%, transparent 50%);
+  }
+  75% { 
+    background-image: 
+      radial-gradient(circle at 55% 55%, rgba(0, 255, 65, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 45% 45%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
+  }
+} 

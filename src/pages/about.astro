@@ -6,7 +6,17 @@ import Layout from "../layouts/Layout.astro";
   title="About Pedro Teixeira - Metaduck"
   description="Pedro Teixeira - Software Engineer, Tech Writer, Open-sourcerer, and Entrepreneur"
 >
-  <section class="text-center py-20 relative">
+  <!-- Glitch overlay for entire page -->
+  <div class="about-glitch-overlay"></div>
+
+  <!-- Matrix rain background -->
+  <div class="about-matrix-bg">
+    <div class="matrix-rain"></div>
+  </div>
+
+  <section
+    class="text-center py-20 relative about-crt-distortion about-cyber-noise"
+  >
     <div class="absolute inset-0 overflow-hidden">
       <img
         src="/images/hero-bg4.jpg"
@@ -23,96 +33,103 @@ import Layout from "../layouts/Layout.astro";
         <img
           src="/images/avatar.jpg"
           alt="Pedro Teixeira"
-          class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-green-500/50"
+          class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-green-500/50 about-avatar-glitch"
           style="box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);"
         />
       </div>
       <h1
-        class="text-5xl font-bold text-green-400 mb-6 font-['Orbitron'] tracking-wider"
+        class="text-5xl font-bold text-green-400 mb-6 font-['Orbitron'] tracking-wider about-glitch-title"
+        data-text="[PEDRO TEIXEIRA]"
       >
         <span class="text-orange-400">[</span>PEDRO TEIXEIRA<span
           class="text-orange-400">]</span
         >
       </h1>
-      <div class="flex flex-col items-center gap-4 mb-8">
+      <div class="flex flex-col items-center gap-4 mb-8 about-data-corruption">
         <p class="text-xl text-green-300 max-w-2xl mx-auto font-mono">
-          👾 Software Engineer 🖋 Tech writer ☕️ Open-sourcerer 🎸 Wanna-be
-          musician 🍼 Father 🚀 Curious
+          [SYSTEM_ARCHITECT] [TECH_WRITER] [OPEN_SOURCE_DEVELOPER]
+          [MUSICIAN_PROTOCOL] [PARENTAL_UNIT] [CURIOSITY_DRIVER]
         </p>
         <div
           class="flex items-center gap-4 text-green-300/70 font-mono text-sm"
         >
-          <span>🏠 Working from home</span>
-          <span>🇵🇹 Portugal</span>
+          <span>[REMOTE_WORK_STATION]</span>
+          <span>[LOCATION: PORTUGAL]</span>
         </div>
       </div>
     </div>
   </section>
 
   <section class="max-w-4xl mx-auto">
-    <div class="sci-fi-card mb-12">
+    <div class="sci-fi-card mb-12 about-cyber-card">
       <div class="p-12">
         <h2
-          class="text-3xl font-bold text-green-400 mb-8 font-['Orbitron'] tracking-wide"
+          class="text-3xl font-bold text-green-400 mb-8 font-['Orbitron'] tracking-wide about-section-header"
+          data-text="BIOGRAPHY"
         >
           BIOGRAPHY
         </h2>
-        <div class="space-y-8 text-green-300 leading-relaxed">
+        <div class="space-y-8 text-green-300 leading-relaxed about-bio-glitch">
           <p>
-            👶 When Pedro was 10, his father brought home a ZX-Spectrum
-            computer. After he plugged it to the power and TV, Pedro typed and
-            stared at the blinking cursor. Since then, computers have been an
-            important part of his life.
+            [INITIALIZATION_SEQUENCE] At age 10, the primary unit's father
+            acquired a ZX-Spectrum terminal. Upon power connection and display
+            initialization, the subject interfaced with the blinking cursor
+            interface. From that moment forward, computational systems became
+            integral to his neural pathways.
           </p>
           <p>
-            👦 At 18 he went to Lisbon to study Software Engineering at I.S.T.,
-            and before he finished it he had already started working for the
-            software industry.
+            [EDUCATION_PROTOCOL] At 18, the unit relocated to Lisbon for
+            Software Engineering training at I.S.T. Before completion of the
+            academic cycle, integration with the software industry had already
+            commenced.
           </p>
           <p>
-            🛠 The first years he spent in consulting for many different
-            industries (retail, B2B, telecoms, finance and tourism). During that
-            time he specialized in distributed systems and the networking
-            protocols that were emerging from this thing called "the internet".
-            Always devoted to open-source (he is the author and contributor of
-            some famous open-source projects and packages), he has also been the
-            writer of 10 books around the subject of Node.js and systems
+            [CONSULTING_PHASE] Initial operational years involved system
+            analysis across multiple industry sectors (retail, B2B, telecoms,
+            finance, tourism). During this period, specialization in distributed
+            systems and emerging network protocols from the entity known as "the
+            internet" was achieved. Maintaining open-source protocols (author
+            and contributor to various open-source projects), the unit has also
+            generated 10 knowledge repositories covering Node.js and systems
             architecture.
           </p>
           <p>
-            🎟 In 2012 he and some friends founded and helped organize the
-            Lisbon JavaScript (LxJS) conferences in Lisbon for 3 years in a row.
+            [CONFERENCE_ORGANIZATION] In 2012, collaborative effort with other
+            units resulted in the establishment and management of Lisbon
+            JavaScript (LxJS) conferences for 3 consecutive cycles.
           </p>
           <p>
-            ⏰ Meanwhile he has joined startups, founded some companies, did
-            consulting work and provided training for some big projects in the
-            U.K. (Thomas Cook, The Economist, King Fisher, British Gas and
+            [TIMELINE_CONTINUUM] During this period, the unit has integrated
+            with startup entities, founded corporate structures, performed
+            consulting operations and provided training protocols for major U.K.
+            projects (Thomas Cook, The Economist, King Fisher, British Gas and
             others).
           </p>
           <p>
-            🧪 For some years he also worked on decentralized computing and
-            storage.
+            [DECENTRALIZED_COMPUTING] For several cycles, the unit also engaged
+            in decentralized computing and storage protocols.
           </p>
           <p>
-            👀 You can still (and hopefully for many years to come) spot him in
-            the wild being a technical team leader or a consultant with a taste
-            for systems architecture, always interested in developing
-            performant, local-first, highly-available and (sometimes)
-            decentralised digital information systems.
+            [CURRENT_STATUS] The unit continues to operate in the field as a
+            technical team leader or consultant with expertise in systems
+            architecture, maintaining focus on developing performant,
+            local-first, highly-available and (occasionally) decentralized
+            digital information systems.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="sci-fi-card mb-12">
+    <div class="sci-fi-card mb-12 about-cyber-card about-holographic">
       <div class="p-12">
         <h2
-          class="text-3xl font-bold text-green-400 mb-8 font-['Orbitron'] tracking-wide"
+          class="text-3xl font-bold text-green-400 mb-8 font-['Orbitron'] tracking-wide about-section-header"
+          data-text="PUBLICATIONS"
         >
           PUBLICATIONS
         </h2>
         <div class="space-y-8">
-          <div class="border-l-4 border-orange-400 pl-8">
+          <div class="border-l-4 border-orange-400 pl-8 about-data-corruption">
             <h3 class="text-xl font-bold text-green-300 mb-3">
               White paper: Merkle-CRDTs (co-author)
             </h3>
@@ -123,13 +140,13 @@ import Layout from "../layouts/Layout.astro";
               href="https://hector.link/presentations/merkle-crdts/merkle-crdts.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm"
+              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm about-cyber-link"
             >
-              🌍 View PDF
+              [ACCESS_PDF]
             </a>
           </div>
 
-          <div class="border-l-4 border-orange-400 pl-8">
+          <div class="border-l-4 border-orange-400 pl-8 about-data-corruption">
             <h3 class="text-xl font-bold text-green-300 mb-3">
               Node Patterns Books (2016)
             </h3>
@@ -141,13 +158,13 @@ import Layout from "../layouts/Layout.astro";
               href="https://leanpub.com/b/nodepatterns"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm"
+              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm about-cyber-link"
             >
-              🌍 View on Leanpub
+              [ACCESS_LEANPUB]
             </a>
           </div>
 
-          <div class="border-l-4 border-orange-400 pl-8">
+          <div class="border-l-4 border-orange-400 pl-8 about-data-corruption">
             <h3 class="text-xl font-bold text-green-300 mb-3">
               Professional Node.js - Building Javascript based Scalable Software
               - Wrox
@@ -159,13 +176,13 @@ import Layout from "../layouts/Layout.astro";
               href="https://www.wiley.com/en-gb/Professional+Node+js%3A+Building+Javascript+Based+Scalable+Software-p-9781118240564"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm"
+              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm about-cyber-link"
             >
-              🌍 View on Wiley
+              [ACCESS_WILEY]
             </a>
           </div>
 
-          <div class="border-l-4 border-orange-400 pl-8">
+          <div class="border-l-4 border-orange-400 pl-8 about-data-corruption">
             <h3 class="text-xl font-bold text-green-300 mb-3">
               Hands-on Node.js (2012)
             </h3>
@@ -176,19 +193,20 @@ import Layout from "../layouts/Layout.astro";
               href="https://leanpub.com/hands-on-nodejs"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm"
+              class="text-orange-400 hover:text-orange-300 transition-colors font-mono text-sm about-cyber-link"
             >
-              🌍 View on Leanpub
+              [ACCESS_LEANPUB]
             </a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="sci-fi-card">
+    <div class="sci-fi-card about-cyber-card">
       <div class="p-12">
         <h2
-          class="text-3xl font-bold text-green-400 mb-8 font-['Orbitron'] tracking-wide"
+          class="text-3xl font-bold text-green-400 mb-8 font-['Orbitron'] tracking-wide about-section-header"
+          data-text="CONNECT"
         >
           CONNECT
         </h2>
@@ -199,7 +217,7 @@ import Layout from "../layouts/Layout.astro";
             href="https://github.com/pgte"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-orange-400 hover:text-orange-300 flex items-center gap-3 font-['Orbitron'] text-sm tracking-wide transition-colors"
+            class="text-orange-400 hover:text-orange-300 flex items-center gap-3 font-['Orbitron'] text-sm tracking-wide transition-colors about-cyber-link"
           >
             <svg
               class="w-6 h-6"
@@ -218,7 +236,7 @@ import Layout from "../layouts/Layout.astro";
             href="https://metaduck.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-orange-400 hover:text-orange-300 flex items-center gap-3 font-['Orbitron'] text-sm tracking-wide transition-colors"
+            class="text-orange-400 hover:text-orange-300 flex items-center gap-3 font-['Orbitron'] text-sm tracking-wide transition-colors about-cyber-link"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -231,7 +249,7 @@ import Layout from "../layouts/Layout.astro";
             href="https://x.com/pgte"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-orange-400 hover:text-orange-300 flex items-center gap-3 font-['Orbitron'] text-sm tracking-wide transition-colors"
+            class="text-orange-400 hover:text-orange-300 flex items-center gap-3 font-['Orbitron'] text-sm tracking-wide transition-colors about-cyber-link"
           >
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path
@@ -244,4 +262,8 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </section>
+
+  <style>
+    @import "../styles/about-glitch.css";
+  </style>
 </Layout>
