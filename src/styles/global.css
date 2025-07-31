@@ -89,6 +89,7 @@
     font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1;
     position: relative;
     overflow: hidden;
+    animation: flicker 0.15s infinite linear, glitch 8s infinite;
   }
 
   code::before {
@@ -101,6 +102,36 @@
     background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
     animation: scan-line 3s ease-in-out infinite;
   }
+
+  code::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 65, 0.03) 2px,
+      rgba(0, 255, 65, 0.03) 4px
+    );
+    pointer-events: none;
+    animation: crt-scan 0.1s infinite linear;
+  }
+
+  /* Glitch effect for inline code */
+  code:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 65, 0.1);
+    animation: glitch-hover 0.3s infinite;
+  }
   
   pre {
     @apply bg-slate-800/90 p-6 rounded-lg overflow-x-auto my-6 border border-green-500/50;
@@ -111,10 +142,7 @@
       radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-  }
-
-  pre::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    animation: terminal-flicker 0.2s infinite linear, glitch-block 12s infinite;
   }
 
   pre::before {
@@ -127,6 +155,47 @@
     background: linear-gradient(90deg, transparent, #00ff41, transparent);
     animation: scan-top 4s ease-in-out infinite;
   }
+
+  pre::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 255, 65, 0.02) 1px,
+      rgba(0, 255, 65, 0.02) 2px
+    );
+    pointer-events: none;
+    animation: crt-scan 0.08s infinite linear;
+  }
+
+  /* Glitch overlay for code blocks */
+  pre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 255, 65, 0.02) 50%,
+      transparent 100%
+    );
+    animation: glitch-scan 6s infinite;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  pre::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
   
   pre code {
     @apply bg-transparent p-0 border-none shadow-none text-green-200 font-['Cascadia_Code',_monospace];
@@ -134,35 +203,93 @@
     font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1;
     position: relative;
     z-index: 1;
+    animation: text-flicker 0.3s infinite linear;
   }
 
-  /* Futuristic scan animations */
+  /* Retro CRT and terminal effects */
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.98; }
+  }
+
+  @keyframes terminal-flicker {
+    0%, 100% { opacity: 1; }
+    25% { opacity: 0.99; }
+    50% { opacity: 0.98; }
+    75% { opacity: 0.99; }
+  }
+
+  @keyframes text-flicker {
+    0%, 100% { text-shadow: 0 0 4px rgba(0, 255, 65, 0.5); }
+    50% { text-shadow: 0 0 6px rgba(0, 255, 65, 0.7), 0 0 8px rgba(0, 255, 65, 0.3); }
+  }
+
+  @keyframes crt-scan {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(2px); }
+  }
+
+  /* Glitch effects */
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+
+  @keyframes glitch-block {
+    0%, 100% { transform: translate(0); }
+    10% { transform: translate(-1px, 1px); }
+    20% { transform: translate(-1px, -1px); }
+    30% { transform: translate(1px, 1px); }
+    40% { transform: translate(1px, -1px); }
+    50% { transform: translate(0); }
+    60% { transform: translate(-0.5px, 0.5px); }
+    70% { transform: translate(-0.5px, -0.5px); }
+    80% { transform: translate(0.5px, 0.5px); }
+    90% { transform: translate(0.5px, -0.5px); }
+  }
+
+  @keyframes glitch-hover {
+    0%, 100% { transform: translate(0); opacity: 0; }
+    50% { transform: translate(-1px, 1px); opacity: 0.3; }
+  }
+
+  @keyframes glitch-scan {
+    0%, 100% { transform: translateX(-100%); opacity: 0; }
+    10% { opacity: 0.1; }
+    90% { opacity: 0.1; }
+    100% { transform: translateX(100%); opacity: 0; }
+  }
+
+  /* Enhanced scan animations */
   @keyframes scan-line {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
+    0% { left: -100%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
   }
 
   @keyframes scan-top {
-    0% { transform: translateX(-100%); }
-    50% { transform: translateX(100%); }
-    100% { transform: translateX(100%); }
+    0% { transform: translateX(-100%); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateX(100%); opacity: 0; }
   }
 
-  /* Enhanced syntax highlighting with pulsing effects */
+  /* Enhanced syntax highlighting with retro effects */
   .token.comment,
   .token.prolog,
   .token.doctype,
   .token.cdata {
     @apply text-cyan-400;
     text-shadow: 0 0 8px rgba(34, 211, 238, 0.8), 0 0 16px rgba(34, 211, 238, 0.4);
-    animation: pulse-cyan 3s ease-in-out infinite;
   }
 
   .token.punctuation {
     @apply text-orange-300;
     text-shadow: 0 0 8px rgba(251, 146, 60, 0.8), 0 0 16px rgba(251, 146, 60, 0.4);
-    animation: pulse-orange 2.5s ease-in-out infinite;
   }
 
   .token.property,
@@ -173,7 +300,6 @@
   .token.symbol {
     @apply text-purple-400;
     text-shadow: 0 0 8px rgba(168, 85, 247, 0.8), 0 0 16px rgba(168, 85, 247, 0.4);
-    animation: pulse-purple 3.5s ease-in-out infinite;
   }
 
   .token.selector,
@@ -183,7 +309,6 @@
   .token.builtin {
     @apply text-yellow-300;
     text-shadow: 0 0 8px rgba(253, 224, 71, 0.8), 0 0 16px rgba(253, 224, 71, 0.4);
-    animation: pulse-yellow 2s ease-in-out infinite;
   }
 
   .token.operator,
@@ -193,7 +318,6 @@
   .style .token.string {
     @apply text-pink-400;
     text-shadow: 0 0 8px rgba(236, 72, 153, 0.8), 0 0 16px rgba(236, 72, 153, 0.4);
-    animation: pulse-pink 2.8s ease-in-out infinite;
   }
 
   .token.atrule,
@@ -201,14 +325,12 @@
   .token.keyword {
     @apply text-blue-400;
     text-shadow: 0 0 8px rgba(96, 165, 250, 0.8), 0 0 16px rgba(96, 165, 250, 0.4);
-    animation: pulse-blue 3.2s ease-in-out infinite;
   }
 
   .token.function,
   .token.class-name {
     @apply text-emerald-400;
     text-shadow: 0 0 8px rgba(52, 211, 153, 0.8), 0 0 16px rgba(52, 211, 153, 0.4);
-    animation: pulse-emerald 2.3s ease-in-out infinite;
   }
 
   .token.regex,
@@ -216,48 +338,53 @@
   .token.variable {
     @apply text-red-400;
     text-shadow: 0 0 8px rgba(248, 113, 113, 0.8), 0 0 16px rgba(248, 113, 113, 0.4);
-    animation: pulse-red 2.7s ease-in-out infinite;
   }
 
-  /* Retro sci-fi pulse animations */
+  /* Retro flicker effect for tokens */
+  @keyframes retro-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
+  }
+
+  /* Enhanced pulse animations with retro effects */
   @keyframes pulse-cyan {
     0%, 100% { text-shadow: 0 0 8px rgba(34, 211, 238, 0.8), 0 0 16px rgba(34, 211, 238, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(34, 211, 238, 1), 0 0 24px rgba(34, 211, 238, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(34, 211, 238, 0.9), 0 0 20px rgba(34, 211, 238, 0.5); }
   }
 
   @keyframes pulse-orange {
     0%, 100% { text-shadow: 0 0 8px rgba(251, 146, 60, 0.8), 0 0 16px rgba(251, 146, 60, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(251, 146, 60, 1), 0 0 24px rgba(251, 146, 60, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(251, 146, 60, 0.9), 0 0 20px rgba(251, 146, 60, 0.5); }
   }
 
   @keyframes pulse-purple {
     0%, 100% { text-shadow: 0 0 8px rgba(168, 85, 247, 0.8), 0 0 16px rgba(168, 85, 247, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(168, 85, 247, 1), 0 0 24px rgba(168, 85, 247, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(168, 85, 247, 0.9), 0 0 20px rgba(168, 85, 247, 0.5); }
   }
 
   @keyframes pulse-yellow {
     0%, 100% { text-shadow: 0 0 8px rgba(253, 224, 71, 0.8), 0 0 16px rgba(253, 224, 71, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(253, 224, 71, 1), 0 0 24px rgba(253, 224, 71, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(253, 224, 71, 0.9), 0 0 20px rgba(253, 224, 71, 0.5); }
   }
 
   @keyframes pulse-pink {
     0%, 100% { text-shadow: 0 0 8px rgba(236, 72, 153, 0.8), 0 0 16px rgba(236, 72, 153, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(236, 72, 153, 1), 0 0 24px rgba(236, 72, 153, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(236, 72, 153, 0.9), 0 0 20px rgba(236, 72, 153, 0.5); }
   }
 
   @keyframes pulse-blue {
     0%, 100% { text-shadow: 0 0 8px rgba(96, 165, 250, 0.8), 0 0 16px rgba(96, 165, 250, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(96, 165, 250, 1), 0 0 24px rgba(96, 165, 250, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(96, 165, 250, 0.9), 0 0 20px rgba(96, 165, 250, 0.5); }
   }
 
   @keyframes pulse-emerald {
     0%, 100% { text-shadow: 0 0 8px rgba(52, 211, 153, 0.8), 0 0 16px rgba(52, 211, 153, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(52, 211, 153, 1), 0 0 24px rgba(52, 211, 153, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(52, 211, 153, 0.9), 0 0 20px rgba(52, 211, 153, 0.5); }
   }
 
   @keyframes pulse-red {
     0%, 100% { text-shadow: 0 0 8px rgba(248, 113, 113, 0.8), 0 0 16px rgba(248, 113, 113, 0.4); }
-    50% { text-shadow: 0 0 12px rgba(248, 113, 113, 1), 0 0 24px rgba(248, 113, 113, 0.6); }
+    50% { text-shadow: 0 0 10px rgba(248, 113, 113, 0.9), 0 0 20px rgba(248, 113, 113, 0.5); }
   }
 
   .token.important,
