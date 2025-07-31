@@ -18,10 +18,15 @@ const { Content } = await post.render();
 <Layout title={title} description={description}>
   <article class="max-w-4xl mx-auto">
     <header class="mb-12">
-      <h1 class="text-5xl font-bold text-gray-900 mb-4">{title}</h1>
-      <div class="flex items-center text-gray-600 mb-6">
+      <h1
+        class="text-5xl font-bold text-green-400 mb-4 font-['Orbitron'] tracking-wider"
+        style="text-shadow: 0 0 15px rgba(0, 255, 65, 0.6);"
+      >
+        {title}
+      </h1>
+      <div class="flex items-center text-green-300/80 mb-6 font-mono text-sm">
         <span class="font-medium">{author}</span>
-        <span class="mx-2">•</span>
+        <span class="mx-2 text-orange-400">•</span>
         <time datetime={date.toISOString()}>
           {
             new Date(date).toLocaleDateString("en-US", {
@@ -36,7 +41,7 @@ const { Content } = await post.render();
         tags && (
           <div class="flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">
+              <span class="bg-slate-700 text-orange-300 px-3 py-1 rounded-full text-sm font-mono border border-orange-400/30">
                 {tag}
               </span>
             ))}
@@ -49,9 +54,9 @@ const { Content } = await post.render();
       <Content />
     </div>
   </article>
-  <footer class="border-t border-gray-200">
-    <div class="container mx-auto px-4 py-6 text-center text-gray-600">
-      <p class="mb-4">
+  <footer class="border-t border-green-500/30 mt-12">
+    <div class="container mx-auto px-4 py-6 text-center text-green-400/70">
+      <p class="mb-4 font-mono">
         Hi, I'm Pedro Teixeira, a software engineer passionate about AI, web
         development, and building tools that make developers' lives easier.
       </p>
@@ -60,25 +65,25 @@ const { Content } = await post.render();
           href="https://linkedin.com/in/pedroteixeira"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-600 hover:text-gray-900"
+          class="text-green-400/70 hover:text-green-300 transition-colors font-['Orbitron'] text-sm tracking-wide"
         >
-          LinkedIn
+          LINKEDIN
         </a>
         <a
           href="https://twitter.com/pgte"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-600 hover:text-gray-900"
+          class="text-green-400/70 hover:text-green-300 transition-colors font-['Orbitron'] text-sm tracking-wide"
         >
-          Twitter
+          TWITTER
         </a>
         <a
           href="https://github.com/pgte"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-600 hover:text-gray-900"
+          class="text-green-400/70 hover:text-green-300 transition-colors font-['Orbitron'] text-sm tracking-wide"
         >
-          GitHub
+          GITHUB
         </a>
       </div>
     </div>
