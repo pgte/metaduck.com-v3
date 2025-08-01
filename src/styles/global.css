@@ -9,6 +9,13 @@
       linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.1) 100%);
     animation: global-flicker 0.1s infinite;
     position: relative;
+    /* Prevent zoom on mobile */
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   /* Enhanced CRT scan lines overlay for entire body */
