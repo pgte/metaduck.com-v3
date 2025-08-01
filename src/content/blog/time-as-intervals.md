@@ -112,10 +112,10 @@ Let me show you some practical examples of how this system works in practice:
 
 ```js
 // Quarterly planning
-Q1 = date(2024-01)  // January 2024
-Q2 = date(2024-04)  // April 2024
-Q3 = date(2024-07)  // July 2024
-Q4 = date(2024-10)  // October 2024
+Q1 = date(2026Q1)  // first quarter of 2024
+Q2 = date(2026Q2)  // second quarter ot 2024
+Q3 = date(2026Q3)  // third quarter of 2024
+Q4 = date(2026Q4)  // fourth quarter of 2024
 
 // Calculate the duration of each quarter
 QuarterDuration = Q2 - Q1  // 3 months
@@ -155,7 +155,7 @@ Growth = (SalesData.Revenue[1] - SalesData.Revenue[0]) / SalesData.Revenue[0]
 
 // Find the month with highest revenue
 MaxRevenue = max(SalesData.Revenue)  // 120000
-MaxMonth = SalesData.Month[1]        // February 2024
+MaxMonth = filter(SalesData, SalesData.Revenue == MaxRevenue).Month  // February 2024
 ```
 
 ## The Technical Implementation
@@ -174,6 +174,7 @@ export type DateGranularity =
   | "hour"
   | "day"
   | "month"
+  | "quarter"
   | "year";
 ```
 
