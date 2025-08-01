@@ -140,19 +140,19 @@ For more complex data, we support table operations that feel natural:
 
 ```typescript
 // Table operations with auto-mapping
-Products = table({
-  name: ["Apple", "Banana", "Orange"],
-  price: [1.00, 0.50, 0.75],
-  quantity: [100, 200, 150]
-})
+Products = {
+  name = ["Apple", "Banana", "Orange"],
+  price = [1.00, 0.50, 0.75],
+  quantity = [100, 200, 150]
+}
 
 // Auto-mapping across table columns
 Revenue = Products.price * Products.quantity  // [100, 100, 112.5]
 
 // Aggregation with grouping
 SalesByProduct = group(Products, Products.name) {
-  totalRevenue: sum(Products.price * Products.quantity),
-  averagePrice: mean(Products.price)
+  totalRevenue = sum(Products.price * Products.quantity),
+  averagePrice = mean(Products.price)
 }
 ```
 
@@ -178,9 +178,9 @@ ProfitMargin = Profit / Revenue;
 
 But we also needed to support more complex operations:
 
-```
+```js
 TotalSales = sum(Sales over Region)
-TopProducts = sort(Products by Revenue, desc)[1..5]
+TopProducts = sort(Products by Revenue, desc)
 ```
 
 We used [Nearley](https://nearley.js.org/) for our parser, which gave us the flexibility to build a robust grammar that could handle both simple and complex expressions.
