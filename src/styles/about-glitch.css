@@ -122,6 +122,7 @@
   animation: avatar-scan 3s infinite linear;
   border-radius: 50%;
   z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes avatar-scan {
@@ -155,6 +156,7 @@
   background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
   animation: cyber-scan 4s infinite ease-in-out;
   z-index: 1;
+  pointer-events: none;
 }
 
 .about-cyber-card::after {
@@ -169,6 +171,7 @@
     radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
   animation: cyber-glow 8s infinite;
   z-index: 0;
+  pointer-events: none;
 }
 
 @keyframes cyber-card-pulse {
@@ -247,6 +250,7 @@
   background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.2), transparent);
   animation: link-scan 2s infinite ease-in-out;
   z-index: -1;
+  pointer-events: none;
 }
 
 @keyframes link-scan {
@@ -304,6 +308,7 @@
   );
   animation: holographic-scan 4s infinite linear;
   z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes holographic-scan {
@@ -358,6 +363,7 @@
     radial-gradient(circle at 75% 75%, rgba(0, 255, 65, 0.02) 0%, transparent 50%);
   animation: cyber-noise 10s infinite;
   z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes cyber-noise {
