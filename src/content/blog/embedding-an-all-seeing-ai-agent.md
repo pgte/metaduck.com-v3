@@ -4,14 +4,14 @@ description: "Instead of building a complex API surface for your AI agent, make 
 author: "Pedro Teixeira"
 date: 2025-06-15
 tags: ["ai", "LLMs", "agent", "app"]
-image: "/images/blog/ai_agent.png"
+image: "/images/blog/astronaut-talking-to-robot.jpg"
 ---
 
 > ## TLDR;
 >
 > Instead of building a complex API surface for your AI agent, make it interact with your app like a human user would. Use the Accessibility Object Model (AOM) to give your agent "eyes" to see the UI and "hands" to interact with it. This approach is simpler, more maintainable, and has the bonus of making your app more accessible for screen readers.
 
-![AI Agent](/images/blog/ai_agent.png)
+![AI Agent](/images/blog/astronaut-talking-to-robot.jpg)
 
 # Embedding an All-Seeing AI Agent
 

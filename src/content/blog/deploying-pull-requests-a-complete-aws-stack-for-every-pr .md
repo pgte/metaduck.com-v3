@@ -20,10 +20,10 @@ tags:
     "testing",
     "deployment",
   ]
-image: "/images/blog/deploying-prs.png"
+image: "/images/blog/astronaut-watches-spaceship-launch.jpg"
 ---
 
-![Deploying PRs](/images/blog/deploying-prs-2.jpg)
+![Deploying PRs](/images/blog/astronaut-watches-spaceship-launch.jpg)
 
 Ever wondered how some teams manage to deploy every pull request to its own isolated environment? Well, buckle up! We're about to dive deep into how we built a CI/CD pipeline that creates a complete AWS infrastructure stack for every PR, complete with custom domains, SSL certificates, and full isolation.
 
