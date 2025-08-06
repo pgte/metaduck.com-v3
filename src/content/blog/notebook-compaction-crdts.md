@@ -315,7 +315,7 @@ The system maintains **ACID properties**:
 
 When we first launched, we saw some concerning patterns:
 
-- **$500/month storage costs** for a single active workspace
+- **high storage costs** for a single active workspace
 - **5-10 second sync times** for documents with heavy editing history
 - **DynamoDB throttling** during peak usage periods
 - **Growing technical debt** as update counts increased
