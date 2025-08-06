@@ -324,7 +324,7 @@ When we first launched, we saw some concerning patterns:
 
 The impact was immediate and dramatic:
 
-- **$50/month storage costs** for the same workspace (90% reduction)
+- **much lower storage costs** for the same workspace (90% reduction)
 - **Sub-second sync times** regardless of editing history
 - **No more DynamoDB throttling** even during peak usage
 - **Predictable scaling** as usage grows
