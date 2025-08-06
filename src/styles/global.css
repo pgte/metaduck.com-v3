@@ -12,11 +12,6 @@
     position: relative;
     /* Prevent zoom on mobile */
     touch-action: manipulation;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
   /* Enhanced CRT scan lines overlay for entire body - reduced frequency */
