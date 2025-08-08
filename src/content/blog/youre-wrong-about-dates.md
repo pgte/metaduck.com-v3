@@ -107,5 +107,22 @@ No conversions. No timezone headaches. No milliseconds. Just _time the way you t
 The truth: your current date system isn’t just awkward — it’s wrong.
 We fixed it. And if that feels unsettling… maybe it’s time your code grew up.
 
+# Old Way vs. Interval Way
+
+| **Scenario**                           | **Old Way (Moment-Obsessed)**                                                             | **Interval Way (Granularity-Aware)**                              |
+| -------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| **Represent “2023”**                   | `new Date('2023-01-01T00:00:00.000Z')` — silently assumes January 1st at midnight in UTC. | `date(2023)` — represents **entire year** Jan 1 to Dec 31.        |
+| **Represent “March 2024”**             | `new Date('2024-03-01T00:00:00.000Z')` — arbitrary starting moment, loses context.        | `date(2024-03)` — represents **whole month** March 1 to March 31. |
+| **Check if March contains March 15th** | Manually compare timestamps: `start <= date && date <= end`.                              | `date(2024-03) contains date(2024-03-15)` → `true`.               |
+| **Project days remaining**             | `(deadline.getTime() - today.getTime()) / (1000*60*60*24)` — pray no DST jumps ruin it.   | `date(2024-12-15) - date(2024-10-20)` → `56 days`.                |
+| **Quarter length**                     | Write custom month math or hardcode “3 months” — break in leap years.                     | `date(2024Q2) - date(2024Q1)` → `3 months`.                       |
+| **Subtract years**                     | `new Date('2023-01-01') - new Date('2020-01-01')` → milliseconds you then divide.         | `date(2023) - date(2020)` → `3 years`.                            |
+| **Store “day-level” data**             | Store full timestamp but ignore time part — waste space and invite bugs.                  | Store only what’s needed: `granularity: day`.                     |
+| **Human meaning**                      | Needs docs to explain what’s implied.                                                     | Is exactly what it says on the tin.                               |
+
+---
+
+**Key point:** The “Old Way” treats _everything_ like an instant and forces you to fake the rest. The “Interval Way” makes human meaning part of the type system.
+
 Full details (and way more examples):
 👉 [Time as Intervals – Decipad’s Rethink of Dates](https://metaduck.com/time-as-intervals/)

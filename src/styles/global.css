@@ -201,7 +201,7 @@
   }
   
   code {
-    @apply bg-slate-800/80 px-2 py-1 rounded text-sm font-['Cascadia_Code',_monospace] text-green-300 border border-green-500/50;
+    @apply bg-slate-800/80 px-2 py-1 rounded text-sm font-['Cascadia_Code',_monospace] text-green-300;
     text-shadow: 0 0 2px rgba(0, 255, 65, 0.3);
     box-shadow: 0 0 4px rgba(0, 255, 65, 0.1), inset 0 0 2px rgba(0, 255, 65, 0.05);
     font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1;
