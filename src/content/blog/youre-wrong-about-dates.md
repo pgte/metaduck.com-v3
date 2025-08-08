@@ -3,13 +3,7 @@ title: "You’re Wrong About Dates — And Your Code is Lying to You"
 description: "Why your mental model of dates is broken, how programming languages gaslight us about time, and how Decipad’s interval-based approach fixes it."
 date: 2025-08-08
 author: "Pedro Teixeira"
-tags: [
-    dates,
-    time
-    programming
-    intervals
-    decipad,
-  ]
+tags: ["dates", "time", "programming", "intervals"]
 image: "/images/blog/astronaut-and-time.jpg"
 ---
 
