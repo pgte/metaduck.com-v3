@@ -29,8 +29,6 @@ Except, when you sketch that gorgeous space station hanging over a planet’s ho
 
 This isn’t a jab at designers. It’s the reality of designing _complex_ systems.
 
----
-
 ## The Reality of Complex Products
 
 In the real world — whether it’s spacecraft or SaaS — complex products have constraints that aren’t obvious from the outside. Physics sets the rules for space stations. Economics, performance limits, data flows, and human behaviour set the rules for software.
@@ -38,8 +36,6 @@ In the real world — whether it’s spacecraft or SaaS — complex products hav
 If you’ve never worked with the inner mechanics of those systems, you’ll make beautiful designs that are structurally impossible.
 
 This is why most successful complex products don’t start with “design from scratch.” They start with _engineering_ — prototypes, system maps, domain knowledge — and _then_ design iterates on top of that.
-
----
 
 ## Design as Translation, Not Invention
 
@@ -50,8 +46,6 @@ If you’re designing a sci-fi set, you work with science advisors and engineers
 
 This collaboration is where the magic happens — the impossible gets trimmed down into the possible, and the possible gets polished into the delightful.
 
----
-
 ## The Problem With the “Design-Led” Myth
 
 We love the idea of the visionary designer who dreams up a perfect, world-changing thing and hands it to engineers to “just build it.”
@@ -59,8 +53,6 @@ We love the idea of the visionary designer who dreams up a perfect, world-changi
 But in complex domains, that’s like telling your art department to make the _Millennium Falcon_ fully functional because it looked good on paper.
 
 The result? Frustration. Endless compromises. And a lot of “oh, we can’t actually do that” meetings.
-
----
 
 ## Design Thrives on Constraints
 

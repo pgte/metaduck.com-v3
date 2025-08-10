@@ -31,8 +31,6 @@ But here’s a secret: on day one, your system is probably held together by duct
 
 The real trick isn’t to build the most elegant, bulletproof system _today_ — it’s to build something that _actually works_ without collapsing under its own weight before you get traction.
 
----
-
 ## **Early Optimization: The Overkill Symphony**
 
 I’ve seen teams rig up entire Kubernetes fleets for a weekend hackathon app. Microservices spun up like fidget spinners, Kafka pipelines humming for an app with five users.
@@ -41,8 +39,6 @@ The result? Months of duct-taping services together, debugging orchestration nig
 
 If your team is spending more time managing YAML than writing code, that’s a clear sign you’ve got duct tape on your brain instead of a laser focus on shipping.
 
----
-
 ## **Minimally Viable Architecture (MVA): The “Spit and Duct Tape” Philosophy**
 
 MVA is about embracing the spit-and-duct-tape approach _intentionally._
@@ -50,8 +46,6 @@ MVA is about embracing the spit-and-duct-tape approach _intentionally._
 - Don’t build a spaceship when you need a skateboard.
 - Choose solutions that solve the problem _right now_ — not the “future-proof” problem you hope to have someday.
 - Make it so simple your mom could understand it (and maybe fix it).
-
----
 
 ## **Poor Man’s X: When Duct Tape Beats Titanium**
 
@@ -64,8 +58,6 @@ Before you bring in Kafka, RabbitMQ, or a fancy event store, try:
 - **Poor Man’s Analytics:** Ship logs to CSV and use spreadsheets before building a data lake.
 
 These may feel like hacks, but in reality, they’re battle-tested glue holding your app together in its scrappy early days.
-
----
 
 ## **The Scalability Sweet Spot: Don’t Shoot Yourself in the Foot**
 
@@ -82,8 +74,6 @@ Take **multi-tenancy** vs **one database per customer**:
 
 In short: build the minimum that’s _good enough_ for now, but don’t paint yourself into a corner that chokes your business when it grows.
 
----
-
 ## **Outsource the Glue That’s Not Your Core**
 
 You don’t have to duct-tape everything yourself. Some plumbing is best rented, not built:
@@ -93,15 +83,11 @@ You don’t have to duct-tape everything yourself. Some plumbing is best rented,
 - Offload search to Algolia or Typesense Cloud instead of DIY Elasticsearch nightmares.
 - Use Sentry or Honeybadger for error tracking, so you can focus on features, not firefighting.
 
----
-
 ## **When Should You Upgrade from Duct Tape?**
 
 When your system’s “spit and duct tape” slows down feature delivery or causes outages, it’s time to refactor.
 
 Until then, don’t let the mythical “best practice” paralyze you. Your job is to **move fast, learn fast, and ship value**.
-
----
 
 ## **The Real “Best Practice”**
 
