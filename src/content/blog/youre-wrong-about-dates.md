@@ -1,5 +1,5 @@
 ---
-title: "You’re Wrong About Dates — And Your Code is Lying to You"
+title: "You’re Wrong About Date-Times — And Your Code is Lying to You"
 description: "Why your mental model of dates is broken, how programming languages gaslight us about time, and how Decipad’s interval-based approach fixes it."
 date: 2025-08-08
 author: "Pedro Teixeira"
@@ -20,7 +20,11 @@ They all pretend that a date is a **precise moment** — a frozen point on a tim
 But that’s not how humans think.
 When you say _“2023”_, you mean the whole year. _“March 2024”_? The entire month. Even _“March 15th”_ means the full day, not some arbitrary nanosecond.
 
-We’ve been forced into fake precision that doesn’t match reality. And it’s not harmless — it leads to broken logic, messy hacks, and subtle bugs that only show up in production.
+We've been forced into fake precision that doesn't match reality. And it's not harmless — it leads to broken logic, messy hacks, and subtle bugs that only show up in production.
+
+> **Note:** This article focuses on the fundamental concept of treating dates as intervals rather than precise moments. We're intentionally not diving into timezone complexity here — that's a separate (and equally important) conversation. Our goal is to show you how a more human-like abstraction of time can simplify your code and make date logic more intuitive.
+
+> **Another Note:** While some libraries do offer interval-based date formatting (like "March 2024" or "Q2 2024"), these are typically just display conveniences rather than fundamental abstractions. Mostly, the dates still resolve to precise moments under the hood, and you can't do meaningful interval math with them. What we're showing here is treating intervals as first-class values in your data model and logic.
 
 ---
 
@@ -44,7 +48,7 @@ Month contains Day    // true
 Day contains Month    // false
 ```
 
-This isn’t just “nicer syntax” — it’s a fundamental shift in how your software _thinks_.
+This isn’t just “nicer syntax” — it’s a fundamental shift in how you abstract time.
 
 ---
 
@@ -62,7 +66,7 @@ Duration as hours       // 1008 hours
 Duration as minutes     // 60,480 minutes
 ```
 
-This is insanely useful:
+This is super useful:
 
 - **Project management**: `ProjectEnd - Today` gives you _remaining days_, instantly.
 - **Finance**: `Q2 - Q1` returns _3 months_ without you hardcoding days-per-month.
