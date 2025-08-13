@@ -48,7 +48,7 @@ Month contains Day    // true
 Day contains Month    // false
 ```
 
-This isn’t just “nicer syntax” — it’s a fundamental shift in how you abstract time.
+This isn’t just “nicer syntax” — it’s a different way to abstract time.
 
 ---
 
