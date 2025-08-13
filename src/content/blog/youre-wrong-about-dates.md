@@ -103,7 +103,6 @@ No conversions. No timezone headaches. No milliseconds. Just _time the way you t
 ---
 
 The truth: your current date system isn’t just awkward — it’s wrong.
-We fixed it. And if that feels unsettling… maybe it’s time your code grew up.
 
 # Old Way vs. Interval Way
 
@@ -123,4 +122,42 @@ We fixed it. And if that feels unsettling… maybe it’s time your code grew up
 **Key point:** The “Old Way” treats _everything_ like an instant and forces you to fake the rest. The “Interval Way” makes human meaning part of the type system.
 
 Full details (and way more examples):
-👉 [Time as Intervals – Decipad’s Rethink of Dates](https://metaduck.com/time-as-intervals/)
+👉 [Time as Intervals – Decipad's Rethink of Dates](https://metaduck.com/time-as-intervals/)
+
+---
+
+## Libraries That Get It (Partly)
+
+While the concept isn't widespread, several libraries across different languages have started implementing interval-based approaches:
+
+**PHP:**
+
+- **Carbon** - Has `CarbonPeriod` for date ranges and `CarbonInterval` for durations
+- **Chronos** - Offers `ChronosDate` with granularity-aware operations
+
+**Kotlin:**
+
+- **kotlinx-datetime** - Provides `DatePeriod` and `DateTimePeriod` for intervals
+- **ThreeTenABP** - Java's time library port with `Period` and `Duration`
+
+**Java:**
+
+- **Java Time API** - Built-in `Period` and `Duration` classes (though still moment-focused)
+- **Joda-Time** - `Period` and `Interval` classes for time spans
+
+**Python:**
+
+- **pendulum** - `Period` class for date ranges
+- **python-dateutil** - `relativedelta` for human-friendly time arithmetic
+
+**JavaScript/TypeScript:**
+
+- **date-fns** - `eachDayOfInterval`, `eachMonthOfInterval` functions
+- **Luxon** - `Interval` class for date ranges
+
+**Ruby:**
+
+- **ActiveSupport** - `Date.current.beginning_of_month..Date.current.end_of_month`
+- **dry-types** - `Types::Date` with granularity options
+
+Most of these still treat intervals as secondary to moments, but they're moving in the right direction. The key insight is that intervals should be the primary abstraction, not an afterthought.
