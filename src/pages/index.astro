@@ -126,9 +126,12 @@ const recentPosts = posts
                 {post.data.tags && (
                   <div class="flex flex-wrap gap-2">
                     {post.data.tags.map((tag) => (
-                      <span class="bg-slate-700 text-orange-300 px-3 py-1 rounded-full text-sm font-mono border border-orange-400/30">
+                      <a
+                        href={`/tags/${tag.toLowerCase().replace(/\s+/g, "-").replace(/[&]/g, "and")}`}
+                        class="bg-slate-700 text-orange-300 px-3 py-1 rounded-full text-sm font-mono border border-orange-400/30 hover:bg-slate-600 transition-colors"
+                      >
                         {tag}
-                      </span>
+                      </a>
                     ))}
                   </div>
                 )}
