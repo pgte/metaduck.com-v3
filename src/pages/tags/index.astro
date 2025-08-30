@@ -1,0 +1,63 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { UNIFIED_TAGS } from "../../content/config";
+
+const posts = await getCollection("blog");
+
+// Count articles per tag
+const tagCounts = UNIFIED_TAGS.map((tag) => ({
+  tag,
+  count: posts.filter((post) => post.data.tags?.includes(tag)).length,
+  slug: tag.toLowerCase().replace(/\s+/g, "-").replace(/[&]/g, "and"),
+})).filter((tagCount) => tagCount.count > 0);
+
+// Sort by count (descending)
+tagCounts.sort((a, b) => b.count - a.count);
+---
+
+<Layout title="Tags - Metaduck">
+  <div class="max-w-4xl mx-auto">
+    <div class="mb-8">
+      <a
+        href="/blog"
+        class="text-green-400 hover:text-green-300 transition-colors font-['Orbitron'] text-sm tracking-wide mb-4 inline-block"
+      >
+        ← Back to Blog
+      </a>
+      <h1
+        class="text-4xl font-bold text-green-400 mb-2 font-['Orbitron'] tracking-wider"
+      >
+        TAGS
+      </h1>
+      <p class="text-green-300/70 text-lg">Browse articles by topic</p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        tagCounts.map(({ tag, count, slug }) => (
+          <a
+            href={`/tags/${slug}`}
+            class="sci-fi-card p-6 hover:scale-105 transition-transform cursor-pointer group"
+          >
+            <h2 class="text-xl font-bold text-green-400 mb-2 font-['Orbitron'] tracking-wide group-hover:text-green-300 transition-colors">
+              {tag}
+            </h2>
+            <p class="text-green-300/70 text-sm">
+              {count} article{count === 1 ? "" : "s"}
+            </p>
+            <div class="mt-4 text-orange-400 text-sm font-mono">Browse →</div>
+          </a>
+        ))
+      }
+    </div>
+
+    {
+      tagCounts.length === 0 && (
+        <div class="text-center py-12">
+          <p class="text-green-300/70 text-lg">No tags found.</p>
+        </div>
+      )
+    }
+  </div>
+</Layout>

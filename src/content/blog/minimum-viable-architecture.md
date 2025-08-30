@@ -1,19 +1,9 @@
 ---
-title: "The Fallacy of “Best Practices” in Software Architecture"
+title: 'The Fallacy of "Best Practices" in Software Architecture'
 description: "Why over-engineering early is a trap, and how to build software with just enough architecture to get real results. Embrace the 'minimum viable architecture' mindset and learn practical, low-friction alternatives to heavyweight solutions."
 author: "Pedro Teixeira"
 date: 2025-08-09
-tags:
-  [
-    "software architecture",
-    "best practices",
-    "minimum viable architecture",
-    "overengineering",
-    "pragmatism",
-    "startup",
-    "devops",
-    "engineering culture",
-  ]
+tags: ["Architecture", "Development"]
 image: "/images/blog/astronaut-building-spaceship.jpg"
 ---
 

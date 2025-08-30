@@ -1,19 +1,9 @@
 ---
-title: "Why Designers Shouldn’t Build Space Stations"
-description: "Why beautiful designs alone can’t overcome the realities of complex systems — and why collaboration between designers and engineers is essential for building things that actually work."
+title: "Why Designers Shouldn't Build Space Stations"
+description: "Why beautiful designs alone can't overcome the realities of complex systems — and why collaboration between designers and engineers is essential for building things that actually work."
 author: "Pedro Teixeira"
 date: 2025-08-10
-tags:
-  [
-    "Design",
-    "Engineering",
-    "Collaboration",
-    "Complex Systems",
-    "Product Development",
-    "Software",
-    "Space",
-    "Process",
-  ]
+tags: ["Architecture", "Development"]
 image: "/images/blog/space-station-collapsing.jpg"
 ---
 

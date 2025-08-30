@@ -3,18 +3,7 @@ title: "Unit Conversions in Decipad: A Deep Dive into the Language's Dimensional
 description: "A comprehensive exploration of Decipad's unit conversion system, detailing how the language integrates dimensional analysis, enforces unit correctness at compile time, and enables precise, error-resistant calculations for scientific, engineering, and financial applications."
 author: "Pedro Teixeira"
 date: 2025-08-05
-tags:
-  [
-    "Units",
-    "Type System",
-    "Dimensional Analysis",
-    "Programming Languages",
-    "Scientific Computing",
-    "Engineering",
-    "Financial Modeling",
-    "Decipad",
-    "Compile-Time Safety",
-  ]
+tags: ["Programming Languages", "Development"]
 image: "/images/blog/astronaut-calculating.jpg"
 ---
 

@@ -1,9 +1,10 @@
 ---
-title: "The History of Databases - A Summary"
-description: "A comprehensive overview of the evolution of databases from their early beginnings to modern times."
-date: 2019-11-26
+title: "The History of Databases: A Summary"
+description: "A comprehensive overview of how database technology has evolved from simple file systems to complex distributed architectures."
 author: "Pedro Teixeira"
-tags: ["databases", "history", "technology"]
+date: 2025-07-16
+tags: ["Data & Databases", "Architecture"]
+image: "/images/blog/Macintosh_128k_transparency.png"
 ---
 
 ## Databases

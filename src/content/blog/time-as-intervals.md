@@ -3,17 +3,7 @@ title: "Time as Intervals: How Decipad's Date System Mimics Human Thinking"
 description: "Discover how Decipad's date system models time as intervals with built-in granularity, enabling intuitive operations like 'contains' and natural date arithmetic that matches human reasoning."
 author: "Pedro Teixeira"
 date: 2025-08-03
-tags:
-  [
-    "dates",
-    "intervals",
-    "granularity",
-    "type system",
-    "programming languages",
-    "human-centered design",
-    "data modeling",
-    "Decipad",
-  ]
+tags: ["Programming Languages", "Development"]
 image: "/images/blog/astronaut-plays-with-time.jpg"
 ---
 

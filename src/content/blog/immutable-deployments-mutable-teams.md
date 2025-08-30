@@ -3,15 +3,7 @@ title: "Immutable Deployments, Mutable Teams: The Paradox That Keeps Software Al
 description: "Exploring the tension between immutable infrastructure and the need for adaptable teams in modern software development, and why both are essential for sustainable software delivery."
 author: "Pedro Teixeira"
 date: 2025-07-09
-tags:
-  [
-    "DevOps",
-    "Infrastructure",
-    "Team Management",
-    "Software Development",
-    "Deployment",
-    "Cloud Native",
-  ]
+tags: ["Architecture", "Serverless"]
 image: "/images/blog/astronauts_surface.jpg"
 ---
 

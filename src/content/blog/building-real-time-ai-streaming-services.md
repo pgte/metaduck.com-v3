@@ -3,19 +3,7 @@ title: "Building Real-Time AI Streaming Services with AWS Lambda and Architect"
 description: "A deep dive into building scalable, production-ready AI chat services with real-time streaming using AWS Lambda, Architect, and Vercel's AI SDK. Learn about architecture, local development, deployment strategies, and cost optimization for modern AI applications."
 author: "Pedro Teixeira"
 date: 2025-07-11
-tags:
-  [
-    "AI",
-    "AWS Lambda",
-    "Streaming",
-    "Serverless",
-    "Architect",
-    "Vercel AI SDK",
-    "Real-Time",
-    "DevOps",
-    "Chatbots",
-    "Cloud",
-  ]
+tags: ["AI & ML", "Serverless", "Real-time", "Architecture"]
 image: "/images/blog/giant_astronaut.jpg"
 ---
 

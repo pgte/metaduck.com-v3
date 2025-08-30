@@ -3,23 +3,7 @@ title: "Local Development Sandbox: Mirroring AWS Serverless on Your Machine 🔧
 description: "Discover how to create a fast, lightweight local development environment that closely mirrors AWS serverless infrastructure—without Docker or complex orchestration. Learn best practices, architecture, and tips for productive serverless development on your machine."
 author: "Pedro Teixeira"
 date: 2025-06-27
-tags:
-  [
-    "local development",
-    "serverless",
-    "aws",
-    "sandbox",
-    "developer experience",
-    "devops",
-    "lambda",
-    "dynamodb",
-    "s3",
-    "api gateway",
-    "javascript",
-    "nodejs",
-    "vite",
-    "best practices",
-  ]
+tags: ["Serverless", "Development", "Architecture"]
 image: "/images/blog/local-development-sandox.jpg"
 ---
 

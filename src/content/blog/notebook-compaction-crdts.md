@@ -3,19 +3,7 @@ title: "Notebook Compaction: How We Optimized CRDT Storage for High-Frequency Co
 description: "How we built a CRDT compaction system for Decipad, merging Y.js updates to dramatically reduce storage costs and improve real-time collaboration performance in high-frequency editing scenarios."
 author: "Pedro Teixeira"
 date: 2025-08-06
-tags:
-  [
-    "CRDT",
-    "collaborative editing",
-    "real-time collaboration",
-    "Y.js",
-    "compaction",
-    "distributed systems",
-    "storage optimization",
-    "DynamoDB",
-    "S3",
-    "websockets",
-  ]
+tags: ["Data & Databases", "Real-time", "Performance", "Architecture"]
 image: "/images/blog/astronaut-mess.jpg"
 ---
 

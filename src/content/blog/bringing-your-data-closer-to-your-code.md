@@ -3,14 +3,7 @@ title: "The Distributed Dream: Bringing Data Closer to Your Code"
 description: "Exploring the challenges and possibilities of bringing data closer to edge compute, and imagining a future of non-uniform data access for distributed systems."
 author: "Pedro Teixeira"
 date: 2025-06-14
-tags:
-  [
-    "distributed systems",
-    "edge computing",
-    "data architecture",
-    "serverless",
-    "consistency",
-  ]
+tags: ["Data & Databases", "Architecture", "Serverless"]
 image: "/images/blog/distributed_dream.jpg"
 ---
 

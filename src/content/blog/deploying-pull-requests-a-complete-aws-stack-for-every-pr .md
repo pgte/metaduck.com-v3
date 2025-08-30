@@ -3,23 +3,7 @@ title: "Deploying Pull Requests: A Complete AWS Stack for Every PR 🚀"
 description: "Learn how to automatically deploy every pull request to its own isolated AWS environment, complete with custom domains, SSL certificates, and full-stack infrastructure. This guide covers the architecture, CI/CD pipeline, and best practices for building robust, production-like PR deployments that supercharge your team's development workflow."
 author: "Pedro Teixeira"
 date: 2025-06-25
-tags:
-  [
-    "devops",
-    "aws",
-    "ci/cd",
-    "pull requests",
-    "serverless",
-    "infrastructure as code",
-    "github actions",
-    "cloudformation",
-    "automation",
-    "ssl",
-    "custom domains",
-    "team productivity",
-    "testing",
-    "deployment",
-  ]
+tags: ["Serverless", "Architecture", "Development"]
 image: "/images/blog/astronaut-watches-spaceship-launch.jpg"
 ---
 

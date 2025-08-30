@@ -1,9 +1,9 @@
 ---
 title: "Embedding an All-Seeing AI Agent"
-description: "Instead of building a complex API surface for your AI agent, make it interact with your app like a human user would."
+description: "How we built an AI agent that can see and understand visual content, opening new possibilities for intelligent automation and assistance."
 author: "Pedro Teixeira"
-date: 2025-06-15
-tags: ["ai", "LLMs", "agent", "app"]
+date: 2025-07-18
+tags: ["AI & ML", "Development"]
 image: "/images/blog/astronaut-talking-to-robot.jpg"
 ---
 

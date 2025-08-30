@@ -1,9 +1,10 @@
 ---
-title: How to build a reliable transaction experience for your customers
-description: "An in-depth look at building reliable transaction experiences using offline-first architecture and state machines"
-date: 2016-06-24
+title: "How to Build a Reliable Transaction Experience for Your Customers"
+description: "Learn the essential patterns and strategies for building robust, user-friendly transaction systems that handle edge cases gracefully."
 author: "Pedro Teixeira"
-tags: ["architecture", "offline-first", "transactions"]
+date: 2025-07-22
+tags: ["Architecture", "Offline-first", "Web Development"]
+image: "/images/blog/cash-register.jpg"
 ---
 
 ![Cash register](../assets/blog/cash-register.jpg)

@@ -3,17 +3,7 @@ title: "Building a Reactive Declarative Language: From Grammar to Incremental Co
 description: "How we designed and implemented a reactive, type-safe, spreadsheet-inspired language with real-time updates, dependency tracking, and incremental computation."
 author: "Pedro Teixeira"
 date: 2025-07-30
-tags:
-  [
-    "reactive programming",
-    "declarative language",
-    "spreadsheets",
-    "incremental computation",
-    "dependency graph",
-    "type safety",
-    "real-time updates",
-    "programming languages",
-  ]
+tags: ["Programming Languages", "Performance", "Development"]
 image: "/images/blog/astronaut-playing-chess.jpg"
 ---
 

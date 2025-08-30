@@ -1,10 +1,10 @@
 ---
-title: "You’re Wrong About Date-Times — And Your Code is Lying to You"
-description: "Why your mental model of dates is broken, how programming languages gaslight us about time, and how Decipad’s interval-based approach fixes it."
-date: 2025-08-08
+title: "You're Wrong About Dates"
+description: "A deep dive into why date handling in programming is more complex than it seems, and how to approach time-based problems correctly."
 author: "Pedro Teixeira"
-tags: ["dates", "time", "programming", "intervals"]
-image: "/images/blog/astronaut-and-time.jpg"
+date: 2025-07-25
+tags: ["Development", "Programming Languages"]
+image: "/images/blog/3598455187_487060297d_z.jpg"
 ---
 
 ![](/images/blog/astronaut-and-time.jpg)

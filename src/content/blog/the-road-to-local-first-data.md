@@ -1,9 +1,10 @@
 ---
-title: "The road to local-first"
-description: "Exploring the evolution of data storage and the rise of local-first applications"
-date: 2019-11-26
+title: "The Road to Local-First Data"
+description: "A journey through the evolution of data architecture, from centralized databases to local-first systems that prioritize user control and offline capabilities."
 author: "Pedro Teixeira"
-tags: ["local-first", "databases", "architecture"]
+date: 2025-07-15
+tags: ["Offline-first", "Data & Databases", "Architecture"]
+image: "/images/blog/porto-santo.jpg"
 ---
 
 In the beginning of the electronic digital information systems, computers were used to perform computations. They were fed an input via a smart card, and an output would be printed out.

@@ -3,18 +3,7 @@ title: "The Lazy Column Revolution: How Decipad Handles Massive Datasets Without
 description: "Discover how Decipad's lazy column architecture enables seamless analysis of massive datasets by combining lazy evaluation, chunked access, and async computation for performance and scalability."
 author: "Pedro Teixeira"
 date: 2025-08-01
-tags:
-  [
-    "Lazy Evaluation",
-    "Data Analysis",
-    "Performance",
-    "Scalability",
-    "Spreadsheet",
-    "Architecture",
-    "Memory Management",
-    "Async",
-    "Chunked Access",
-  ]
+tags: ["Performance", "Data & Databases", "Architecture"]
 image: "/images/blog/astronaut-marvels.jpg"
 ---
 

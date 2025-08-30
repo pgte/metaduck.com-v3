@@ -1,9 +1,10 @@
 ---
-title: Why your application needs to be offline-first — typical use cases
-description: "I recently attended the first Offline Camp, a gathering of a very diverse group of people that were interested and invested in the Offline-first subject."
-date: 2016-07-20
+title: "Why Your Application Needs to Be Offline-First"
+description: "Discover the critical importance of offline-first architecture for modern applications, and learn how to design systems that work seamlessly regardless of network connectivity."
 author: "Pedro Teixeira"
-tags: ["offline-first", "architecture", "mobile"]
+date: 2025-07-20
+tags: ["Offline-first", "Architecture", "Web Development"]
+image: "/images/blog/offline-camp.jpg"
 ---
 
 ![Offline Camp](../assets/blog/offline-camp.jpg)

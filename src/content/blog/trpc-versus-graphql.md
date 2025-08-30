@@ -3,16 +3,7 @@ title: "In a World of Hype, GraphQL's Fundamental Advantages Over tRPC Still Hol
 description: "While tRPC offers great developer experience with end-to-end type safety, GraphQL's client-side query customization provides architectural flexibility that shouldn't be overlooked. A deep dive into why GraphQL's advantages remain relevant."
 author: "Pedro Teixeira"
 date: 2025-08-07
-tags:
-  [
-    "GraphQL",
-    "tRPC",
-    "TypeScript",
-    "API Design",
-    "Frontend Development",
-    "Backend Development",
-    "Developer Experience",
-  ]
+tags: ["Web Development", "Development", "Architecture"]
 image: "/images/blog/astronaut-playing-with-toys.jpg"
 ---
 

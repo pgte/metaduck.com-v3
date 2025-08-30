@@ -1,19 +1,10 @@
 ---
-title: "Bringing Data Closer to Your Code — For Real"
-description: "A practical guide to implementing edge-first data strategies, from global replicas to local-first sync. Learn how to reduce latency, improve offline experiences, and build more resilient applications."
+title: "Bringing Data Closer to Your Code: A Real Implementation"
+description: "A practical implementation of bringing data closer to edge compute, with real-world examples and performance benchmarks."
 author: "Pedro Teixeira"
-date: 2025-07-05
-tags:
-  [
-    "Edge Computing",
-    "Database",
-    "Performance",
-    "Architecture",
-    "Distributed Systems",
-    "CDN",
-    "Local-First",
-  ]
-image: "/images/blog/astronaut_doing_repair.jpg"
+date: 2025-06-16
+tags: ["Data & Databases", "Architecture", "Performance"]
+image: "/images/blog/data-flow.jpg"
 ---
 
 ![Astronaut doing repair](/images/blog/astronaut_doing_repair.jpg)

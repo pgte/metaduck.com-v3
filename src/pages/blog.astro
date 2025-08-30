@@ -12,11 +12,21 @@ const sortedPosts = posts.sort((a, b) => {
 
 <Layout title="Blog - Metaduck">
   <div class="max-w-4xl mx-auto">
-    <h1
-      class="text-4xl font-bold text-green-400 mb-8 font-['Orbitron'] tracking-wider"
+    <div
+      class="flex flex-col md:flex-row md:items-center md:justify-between mb-8"
     >
-      BLOG POSTS
-    </h1>
+      <h1
+        class="text-4xl font-bold text-green-400 font-['Orbitron'] tracking-wider"
+      >
+        BLOG POSTS
+      </h1>
+      <a
+        href="/tags"
+        class="text-green-400 hover:text-green-300 transition-colors font-['Orbitron'] text-sm tracking-wide mt-4 md:mt-0 border border-green-400/30 px-4 py-2 rounded hover:border-green-400/50"
+      >
+        Browse by Tags
+      </a>
+    </div>
 
     <div class="grid gap-8">
       {
@@ -58,9 +68,12 @@ const sortedPosts = posts.sort((a, b) => {
                 {post.data.tags && (
                   <div class="flex flex-wrap gap-2">
                     {post.data.tags.map((tag) => (
-                      <span class="bg-slate-700 text-orange-300 px-3 py-1 rounded-full text-sm font-mono border border-orange-400/30">
+                      <a
+                        href={`/tags/${tag.toLowerCase().replace(/\s+/g, "-").replace(/[&]/g, "and")}`}
+                        class="bg-slate-700 text-orange-300 px-3 py-1 rounded-full text-sm font-mono border border-orange-400/30 hover:bg-slate-600 transition-colors"
+                      >
                         {tag}
-                      </span>
+                      </a>
                     ))}
                   </div>
                 )}
