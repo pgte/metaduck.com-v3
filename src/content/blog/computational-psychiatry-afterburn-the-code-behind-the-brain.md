@@ -11,7 +11,7 @@ image: "/images/blog/astronaut-brain-computer.jpg"
 
 ### From Code to Cognition: The Models of Computational Psychiatry 🧠
 
-As a software engineer who recently dove into the world of Computational Psychiatry, I wanted to follow up on my initial post about the course with a deeper dive into the "what" and "how" of this fascinating field.
+As a software engineer who recently dove into the world of Computational Psychiatry, I wanted to follow up on [my initial post about the course](https://metaduck.com/cpc-computational-psychiatry-course-afterburn-intro/) with a deeper dive into the "what" and "how" of this fascinating field.
 
 In my intro post, I mentioned that computational psychiatry is all about applying **computational models** to understand how the brain works—or, more accurately, how it breaks down in mental illness. But what exactly are these models? Think of them less like a static blueprint and more like a dynamic, testable hypothesis you can code.
 
