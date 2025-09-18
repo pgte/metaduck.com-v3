@@ -427,13 +427,6 @@ If this sparked your curiosity and you're ready to dive headfirst into the HGF r
 **Link**: [TNU Website](https://www.tnu.ethz.ch/)  
 **Focus**: Computational psychiatry and neuroimaging
 
-#### 2. **Computational Psychiatry Society**
-
-**Link**: [CompPsy Society](https://www.computationalpsychiatry.org/)  
-**Focus**: Annual conferences and networking
-
-_Note: The official society website may not be active. Consider joining computational psychiatry communities on social media and academic platforms._
-
 ### 🎓 Comprehensive Preparation Resources
 
 #### **Computational Psychiatry Course Preparation**
