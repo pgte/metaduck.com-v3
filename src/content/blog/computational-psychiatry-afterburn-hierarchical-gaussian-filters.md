@@ -9,7 +9,7 @@ image: "/images/blog/astronaut-brain-computer.jpg"
 
 ![Astronaut and brain](/images/blog/astronaut-brain-computer.jpg)
 
-> **Welcome back!** In our [previous article on computational psychiatry](/blog/computational-psychiatry-afterburn-the-code-behind-the-brain), we took a bird's-eye view of the field, exploring models of perception, action, and learning. Now, it's time to zoom in and get our hands dirty with the actual mathematics and code.
+> **Welcome back!** In our [previous article on computational psychiatry](https://metaduck.com/computational-psychiatry-afterburn-the-code-behind-the-brain/), we took a bird's-eye view of the field, exploring models of perception, action, and learning. Now, it's time to zoom in and get our hands dirty with the actual mathematics and code.
 
 As promised, we're starting with **perception**, and our first stop is a fascinating Bayesian model called the **Hierarchical Gaussian Filter (HGF)**.
 
