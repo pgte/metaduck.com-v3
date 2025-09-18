@@ -9,6 +9,8 @@ image: "/images/blog/astronaut-brain-computer.jpg"
 
 ![Astronaut and brain](/images/blog/astronaut-brain-computer.jpg)
 
+Of course. Here is the revised article with all the corrections applied.
+
 Hey everyone\! Welcome back. In the last article, we took a bird's-eye view of computational psychiatry, touching on models of perception, action, and learning. Now, it's time to zoom in. As promised, we're starting with perception, and our first stop is a really cool Bayesian model called the **Hierarchical Gaussian Filter (HGF)**.
 
 For us software engineers, you can think of the HGF as a real-time system for updating beliefs. Imagine you're building a spam filter. You have a model of what "spam" looks like, and with each new email, you update your model. The HGF does something similar, but it's designed to model how _we_ as humans update our beliefs about the world, especially in environments that are constantly changing.
@@ -31,9 +33,9 @@ This hierarchical structure allows the HGF to do something really neat: it can a
 
 Okay, let's pop the hood and look at the math. Don't worry, we'll keep it conceptual.
 
-The HGF assumes that our beliefs about the world can be represented by **Gaussian probability distributions**. A Gaussian distribution is just a fancy name for the bell curve, and it's defined by two parameters: the **mean** ($\mu$), which represents our belief, and the **variance** ($\sigma^2$), which represents our uncertainty about that belief.
+The HGF assumes that our beliefs about the world can be represented by **Gaussian probability distributions**. A Gaussian distribution is just a fancy name for the bell curve, and it's defined by two parameters: the **mean** ($\\mu$), which represents our belief, and the **variance** ($\\sigma^2$), which represents our uncertainty about that belief.
 
-The model consists of a series of levels, where the state at level $i$ is denoted by $x_i$. The lowest level, $x_1$, represents the quantity we're trying to predict. The levels above, $x_2$, $x_3$, etc., represent the volatility of the level below.
+The model consists of a series of levels, where the state at level $i$ is denoted by $x\_i$. The lowest level, $x\_1$, represents the quantity we're trying to predict. The levels above, $x\_2$, $x\_3$, etc., represent the volatility of the level below.
 
 The update equations for the HGF are derived using **variational Bayes**, which is a way of approximating the true posterior distribution of our beliefs. The key equations look something like this:
 
@@ -46,9 +48,11 @@ The update equations for the HGF are derived using **variational Bayes**, which 
 - **Update of the mean at level i:**
   $$\mu_i^{(k)} = \hat{\mu}_i^{(k)} + \alpha_i \cdot \delta_i^{(k)}$$
 
-Here, $k$ is the trial number, $\hat{\mu}_i^{(k)}$ is the prediction at level $i$ on trial $k$, and $\delta_i^{(k)}$ is the prediction error. The learning rate, $\alpha_i$, is proportional to the precision (the inverse of the variance) of the belief at the level above, which is what allows the HGF to dynamically adjust its learning.
+Here, $k$ is the trial number, $\\hat{\\mu}\_i^{(k)}$ is the prediction at level $i$ on trial $k$, and $\\delta\_i^{(k)}$ is the prediction error. The learning rate, $\\alpha\_i$, is proportional to the precision (the inverse of the variance) of the belief at the level above.
 
-This is a simplified view, but it captures the essence of how the HGF works. If you want to go deeper, I highly recommend the original papers by Mathys and colleagues.
+This is the key takeaway:
+
+> **$\\alpha\_i$ isn't a fixed learning rate you have to tune.** It's calculated on the fly, based on the model's own uncertainty at the next level up. That's what allows the HGF to dynamically adjust how much it learns.
 
 ---
 
@@ -75,7 +79,7 @@ from pyhgf.model import HGF
 from pyhgf import load_data
 
 # Load some example data
-timeserie = load_data("binary")
+timeseries = load_data("binary")
 
 # Define our HGF model
 hgf = HGF(
@@ -87,7 +91,7 @@ hgf = HGF(
 )
 
 # Feed the data to the model
-hgf.input_data(input_data=timeserie)
+hgf.input_data(input_data=timeseries)
 
 # Compute the model's surprise (-log probability)
 surprise = hgf.surprise()
@@ -108,3 +112,44 @@ So there you have it: a whirlwind tour of the Hierarchical Gaussian Filter. We'v
 I hope this has given you a sense of why the HGF is such a powerful tool in computational psychiatry. In the next article, we'll continue our journey into the world of perception, exploring other models and seeing how they can be used to understand the complexities of the human mind.
 
 Stay tuned\!
+
+---
+
+## Want to Go Deeper? Resources for Further Study
+
+If this sparked your curiosity and you're ready to dive headfirst into the HGF rabbit hole, here are some excellent resources to get you started. They range from the foundational academic papers to hands-on coding toolboxes.
+
+### Foundational Papers
+
+1.  **A Bayesian foundation for individual learning under uncertainty (2011)** by Mathys, C., Daunizeau, J., Friston, K. J., & Stephan, K. E.
+
+    - **Link:** [Frontiers in Human Neuroscience](https://www.frontiersin.org/articles/10.3389/fnhum.2011.00039/full)
+    - **Why read it?** This is one of the seminal papers that lays out the full mathematical theory of the HGF. It's dense, but it's the definitive source.
+
+2.  **Uncertainty in perception and the Hierarchical Gaussian Filter (2014)** by Mathys, C., Lomakina, E. I., & Daunizeau, J.
+
+    - **Link:** [Frontiers in Human Neuroscience](https://www.frontiersin.org/articles/10.3389/fnhum.2014.00825/full)
+    - **Why read it?** A key follow-up paper that provides a more accessible overview and further details on the model's application to perception.
+
+---
+
+### Toolboxes & Code
+
+1.  **TAPAS (Translational Algorithms for Psychiatry-Advancing Science)**
+
+    - **Link:** [Translational Neuromodeling Unit (TNU) Website](https://www.tnu.ethz.ch/de/software/tapas)
+    - **What is it?** This is the original, open-source MATLAB toolbox for implementing the HGF and other computational models. It's the gold standard in the research community and is incredibly well-documented.
+
+2.  **PyHGF**
+
+    - **Link:** [PyHGF GitHub Repository](https://github.com/ComputationalPsychiatry/pyhgf)
+    - **What is it?** The Python implementation of the HGF we used in the code sample. It's a great choice if you're more comfortable in the Python ecosystem. The documentation is excellent and provides a solid starting point for simulations.
+
+3.  **hBayesDM (Hierarchical Bayesian Modeling of Decision-Making Tasks)**
+
+    - **Link:** [hBayesDM Website](https://ccs-lab.github.io/hBayesDM/)
+    - **What is it?** An R package that makes it easy to fit a wide range of computational models, including the HGF, to behavioral data. It's built on top of Stan, a powerful probabilistic programming language.
+
+---
+
+Happy coding, and happy learning\!
