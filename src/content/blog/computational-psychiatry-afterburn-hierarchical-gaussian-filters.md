@@ -112,43 +112,6 @@ This is what makes the HGF so powerful—it's **self-tuning** based on its own c
 
 ---
 
-## 🏥 Real-World Applications: From Schizophrenia to Addiction
-
-So, what can we do with this fancy model? The HGF has been used to study a wide range of cognitive processes and psychiatric conditions. Here are some fascinating examples:
-
-### 🧠 Schizophrenia Research
-
-**What they're studying**: Perceptual disturbances like hallucinations and delusions
-
-**The HGF insight**: These experiences might be caused by an inability to properly weigh prediction errors, leading to a distorted model of the world.
-
-**Key papers**:
-
-- [Mathys et al. (2011)](https://www.frontiersin.org/articles/10.3389/fnhum.2011.00039/full) - Foundational HGF paper
-- [Adams et al. (2013)](https://www.nature.com/articles/nn.3276) - HGF in schizophrenia
-
-### 😰 Anxiety Disorders
-
-**What they're studying**: How we learn about threats in our environment
-
-**The HGF insight**: Anxiety might be related to how we process uncertainty and prediction errors about potential dangers.
-
-**Key papers**:
-
-- [Browning et al. (2015)](https://www.nature.com/articles/nn.4102) - Anxiety and uncertainty
-- [Paulus & Stein (2006)](https://www.nature.com/articles/nrn1611) - Decision-making in anxiety
-
-### 🎯 Addiction Research
-
-**What they're studying**: Decision-making processes involved in addiction
-
-**The HGF insight**: Understanding why some people are more likely to relapse after abstinence periods.
-
-**Key papers**:
-
-- [Redish (2004)](https://www.nature.com/articles/nrn1470) - Addiction as a decision-making disorder
-- [Glimcher (2011)](https://www.nature.com/articles/nn.2723) - Understanding addiction through computational models
-
 ### 🎯 The Power of Computational Psychiatry
 
 The beauty of the HGF is that it provides a **formal, mathematical framework** for thinking about these complex issues. It allows us to:
