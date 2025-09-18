@@ -1,5 +1,5 @@
 ---
-title: "Diving Deeper: Perception, Beliefs, and the Hierarchical Gaussian Filter"
+title: "Perception, Beliefs, and the Hierarchical Gaussian Filter"
 description: "A practical introduction to the Hierarchical Gaussian Filter (HGF) in computational psychiatry—how it models human perception, belief updating, and learning under uncertainty, with intuitive explanations for software engineers."
 author: "Pedro Teixeira"
 date: 2025-09-18
