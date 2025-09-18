@@ -110,14 +110,6 @@ Where:
 
 This is what makes the HGF so powerful—it's **self-tuning** based on its own confidence levels.
 
-### 📚 Want to Go Deeper?
-
-If you're curious about the mathematical foundations, check out these resources:
-
-- [Variational Bayes Explained](https://en.wikipedia.org/wiki/Variational_Bayesian_methods) - Wikipedia overview
-- [Bayesian Inference in Machine Learning](https://www.coursera.org/learn/bayesian-methods-in-machine-learning) - Coursera course
-- [The Math Behind HGF](https://www.tnu.ethz.ch/de/software/tapas) - TAPAS documentation
-
 ---
 
 ## 🏥 Real-World Applications: From Schizophrenia to Addiction
