@@ -192,10 +192,6 @@ The principles of Predictive Coding are inspiring new approaches across engineer
 
 ---
 
-Of course. Here is the revised "Further Resources" section with direct links to the materials.
-
----
-
 ## Further Resources
 
 If you're hooked and want to dive deeper into this fascinating field, here are some excellent resources to get you started:
