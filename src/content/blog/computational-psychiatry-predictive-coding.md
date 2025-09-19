@@ -9,7 +9,7 @@ image: "/images/blog/astronaut-prediction.jpg"
 
 ![Astronaut and brain](/images/blog/astronaut-prediction.jpg)
 
-Hey everyone\! Following up on my last post about the Hierarchical Gaussian Filter (HGF), let's dive into another powerful framework that underpins much of modern computational neuroscience: **Predictive Coding**.
+Hey everyone\! Following up on [my last post about the Hierarchical Gaussian Filter](https://metaduck.com/computational-psychiatry-afterburn-hierarchical-gaussian-filters/) (HGF), let's dive into another powerful framework that underpins much of modern computational neuroscience: **Predictive Coding**.
 
 If you're a software engineer, you're already familiar with systems that generate, process, and react to data. Well, your brain is the ultimate data engine, but it's not just passively receiving information. It's an active, relentless prediction machine, constantly trying to guess what's coming next and only bothering to process the 'surprises'.
 
