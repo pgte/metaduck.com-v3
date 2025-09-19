@@ -158,6 +158,8 @@ plt.show()
 
 When you run this code, it produces two plots that perfectly illustrate the theory.
 
+![Plot result](/images/blog/predictive-coding-output-graph.png)
+
 1.  **Agent's Belief vs. True World State (Top Plot):** This shows the ground truth (black dashed line) and the agent's internal belief (red line). Notice how the agent's belief starts at 0.5 but quickly learns to track the true value of 0.2. When the world suddenly changes at trial 100, the agent's belief is wrong for a moment, but it rapidly adapts and learns the new reality of 0.8.
 
 2.  **Prediction Error Over Time (Bottom Plot):** This is the engine of the learning process. The error fluctuates around zero when the agent's model is accurate. But look at the **massive spike at trial 100**. This is the "surprise" signal. The sudden environmental change created a huge discrepancy between the agent's prediction (still around 0.2) and the sensory input (now around 0.8). This large error signal is precisely what drives the rapid change in the agent's belief, compelling it to update its model of the world.
