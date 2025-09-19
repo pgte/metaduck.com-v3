@@ -4,10 +4,10 @@ description: "A practical introduction to the Hierarchical Gaussian Filter (HGF)
 author: "Pedro Teixeira"
 date: 2025-09-18
 tags: ["Computational Psychiatry", "AI & ML"]
-image: "/images/blog/astronaut-brain-computer.jpg"
+image: "/images/blog/astronaut-hgf.jpg"
 ---
 
-![Astronaut and brain](/images/blog/astronaut-brain-computer.jpg)
+![Astronaut and brain](/images/blog/astronaut-hgf.jpg)
 
 > **Welcome back!** In our [previous article on computational psychiatry](https://metaduck.com/computational-psychiatry-afterburn-the-code-behind-the-brain/), we took a bird's-eye view of the field, exploring models of perception, action, and learning. Now, it's time to zoom in and get our hands dirty with the actual mathematics and code.
 
