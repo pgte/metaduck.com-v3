@@ -4,10 +4,10 @@ description: "An accessible, engineer-friendly introduction to Predictive Coding
 author: "Pedro Teixeira"
 date: 2025-09-19
 tags: ["Computational Psychiatry", "AI & ML"]
-image: "/images/blog/astronaut-brain-computer.jpg"
+image: "/images/blog/astronaut-prediction.jpg"
 ---
 
-![Astronaut and brain](/images/blog/astronaut-brain-computer.jpg)
+![Astronaut and brain](/images/blog/astronaut-prediction.jpg)
 
 Hey everyone\! Following up on my last post about the Hierarchical Gaussian Filter (HGF), let's dive into another powerful framework that underpins much of modern computational neuroscience: **Predictive Coding**.
 
