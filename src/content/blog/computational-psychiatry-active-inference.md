@@ -226,3 +226,26 @@ So, how do these four concepts connect into one powerful narrative?
 These ideas are not just theoretical curiosities. They are being used to develop more sophisticated AI and to better understand mental health conditions like schizophrenia and anxiety, which can be viewed as disorders of inference—where the process of updating beliefs or acting on the world goes awry.
 
 I hope this has given you a taste of these powerful ideas. In the next post, we'll dive even deeper into some of these concepts and explore more practical applications. Stay tuned\!
+
+### Further Resources
+
+If these ideas have piqued your interest, here is a curated and verified list of resources to continue your learning journey. They range from gentle introductions to more technical deep dives.
+
+#### Active Inference & The Free-Energy Principle
+
+- **Article:** [A Step-by-Step Tutorial on Active Inference and Its Application to Empirical Data](https://www.sciencedirect.com/science/article/pii/S0022249621000973) - A comprehensive, accessible paper from the National Library of Medicine that breaks down the math and concepts behind Active Inference. It's aimed at researchers but is clear enough for motivated engineers.
+- **Video:** [Intro to Active Inference with Karl Friston](https://www.youtube.com/watch?v=XohuuIi7Jt8) - A YouTube interview with Karl Friston himself from the Theiss-Morse S-B² Research Group, which gives a great flavor of the core ideas directly from the source.
+- **Code:** [`pymdp`: A Python library for Active Inference on GitHub](https://github.com/infer-actively/pymdp) - This library allows you to build and simulate your own Active Inference agents in MDP environments. It's a fantastic way to get hands-on experience.
+- **Blog Post:** [The Free Energy Principle for Dummies on LessWrong](https://www.lesswrong.com/posts/wpZJvgQ4HvJE2bysy/god-help-us-let-s-try-to-understand-friston-on-free-energy) - A well-regarded attempt to explain these complex ideas from the ground up in a more intuitive way.
+
+#### Markov Decision Processes & Reinforcement Learning
+
+- **Book:** ["Reinforcement Learning: An Introduction" by Sutton and Barto](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf) - This is the definitive textbook on reinforcement learning. The authors host the full, official PDF on this site for free. The chapters on MDPs and Value Iteration are essential reading.
+- **Video Course:** [UCL Reinforcement Learning Lectures by David Silver](https://www.youtube.com/watch?v=2pWv7GOvuf0) - This is the official YouTube playlist for a legendary lecture series that has served as the foundation for a generation of AI engineers. The first few lectures cover MDPs perfectly.
+- **Code:** [`Gymnasium` by Farama Foundation](https://gymnasium.farama.org/index.html) - The official documentation for the de facto standard library for reinforcement learning environments. It provides a simple interface to hundreds of environments for you to test your agents on.
+
+#### Bayesian Inference
+
+- **Book:** ["Think Bayes" by Allen B. Downey](https://allendowney.github.io/ThinkBayes2/) - The official site for the book, offering a fantastic and highly practical introduction to Bayesian thinking using Python. The entire book is available for free here.
+- **Code:** [`PyMC`: Probabilistic Programming in Python](https://www.pymc.io/welcome.html) - The official welcome and documentation page for PyMC, a powerful Python library that allows you to build and solve complex Bayesian models.
+- **Interactive Article:** [Bayes' Rule: A Tutorial Introduction on Arbital](https://arbital.com/p/bayes_rule/?l=1zq) - A wonderfully clear and visual guide that builds your intuition for how Bayes' theorem works in practice.
