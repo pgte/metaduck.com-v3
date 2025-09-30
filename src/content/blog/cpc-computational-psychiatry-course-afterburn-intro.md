@@ -9,7 +9,7 @@ image: "/images/blog/astronaut-and-brain.png"
 
 ![Astronaut and brain](/images/blog/astronaut-and-brain.png)
 
-Hey there! I'm **Pedro Teixeira**, and for the next few weeks, I'll be sharing a series of posts called **"CPC Afterburn"** about my experience at the [2025 Computational Psychiatry Course (CPC)](https://www.translationalneuromodeling.org/cpc2025/) in Zurich. This course, organized by the [Translational Neuromodeling Unit (TNU)](https://www.translationalneuromodeling.org/), is an intensive, six-day program designed to give attendees the tools needed to tackle research challenges in computational psychiatry.
+Hey there! I'm **Pedro Teixeira**, and for the next few weeks, I'll be sharing a series of posts called **"CPC Afterburn"** about my experience at the [2025 Computational Psychiatry Course (CPC)](https://www.translationalneuromodeling.org/cpcourse/) in Zurich. This course, organized by the [Translational Neuromodeling Unit (TNU)](https://www.tnu.ethz.ch/de/home), is an intensive, six-day program designed to give attendees the tools needed to tackle research challenges in computational psychiatry.
 
 As a software engineer, I'm used to thinking about systems and models in a certain way, but this course was a fascinating dive into how those same concepts can be applied to understanding the human mind. The CPC's goal is to provide a clear overview of the existing computational models and open-source software, demonstrating how they can be used to address specific problems in psychiatry.
 
