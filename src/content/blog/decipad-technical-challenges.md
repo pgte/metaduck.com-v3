@@ -1,6 +1,6 @@
 ---
 title: "Building Decipad: A Deep Dive into Our Toughest Engineering Challenges"
-description: "From real-time collaboration with CRDTs to a high-performance Rust computation engine, we're pulling back the curtain on the 14 biggest technical hurdles we overcame in Decipad's evolution."
+description: "From real-time collaboration with CRDTs to a high-performance Rust computation engine, we're pulling back the curtain on the 9 biggest technical hurdles we overcame in Decipad's evolution."
 author: "Pedro Teixeira"
 date: 2025-10-17
 tags: ["Decipad", "Offline-first", "Serverless"]
