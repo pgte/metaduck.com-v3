@@ -7,7 +7,7 @@ tags: ["Decipad"]
 image: "/images/blog/decipad.jpg"
 ---
 
-It is with a heavy heart that we recently announced the shutdown of Decipad. The journey of building a new kind of tool for numerical computation has been one of the most challenging and rewarding experiences of my life. As we close this chapter, I find myself reflecting on the very problem we set out to solve: is there a better, more humane way to work with numbers than the spreadsheet?
+It is with a heavy heart that [we recently announced the shutdown of Decipad](https://www.decipad.com/decipad-is-shutting-down). The journey of building a new kind of tool for numerical computation has been one of the most challenging and rewarding experiences of my life. As we close this chapter, I find myself reflecting on the very problem we set out to solve: is there a better, more humane way to work with numbers than the spreadsheet?
 
 ![Decipad](/images/blog/decipad.jpg)
 
