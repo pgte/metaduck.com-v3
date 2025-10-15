@@ -13,6 +13,7 @@ export const UNIFIED_TAGS = [
   "Offline-first",
   "Programming Languages",
   "Computational Psychiatry",
+  "Decipad",
 ] as const;
 
 export type UnifiedTag = (typeof UNIFIED_TAGS)[number];
