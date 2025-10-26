@@ -3,7 +3,7 @@ title: "What's Next? From Decipad to New Frontiers"
 description: "Reflecting on the journey of building—and saying goodbye to—Decipad, this post explores what's next: open-sourcing our work, lessons learned, and a personal look toward new challenges in health tech and education."
 author: "Pedro Teixeira"
 date: 2025-10-19
-tags: ["Decipad"]
+tags: ["Decipad", "Career"]
 image: "/images/blog/astronaut-in-wonder.jpg"
 ---
 
