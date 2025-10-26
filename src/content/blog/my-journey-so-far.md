@@ -31,6 +31,8 @@ I wasn’t complaining - I was learning a lot - but I wasn’t really choosing m
 
 ### Taking the Helm
 
+![Madeira](/images/blog/madeira.png)
+
 That changed in **2004**, when I decided to take control of my destiny.
 I moved back home to **Madeira island** and, since there was no real tech industry to join, I started my own company.
 
@@ -86,6 +88,8 @@ Still, it left me with a fascination for how **software and public good** inters
 
 Sadly, few seemed interested in real change, and my enthusiasm fizzled out.
 
+![F-off](/images/blog/f-off.jpeg)
+
 ---
 
 ### The Decipad Chapter
@@ -100,13 +104,15 @@ It hurt. But it also felt like the closing of a chapter that taught me **everyth
 We shared a bit about that here:
 👉 [Decipad is shutting down](https://www.decipad.com/decipad-is-shutting-down)
 
----
+![Me](/images/blog/me.png)
 
 ### Looking Ahead
 
 Now, as I look ahead, I know I want to do something that matters deeply - in **health** or **education**.
 
 I’ve been exploring the field of **[Computational Psychiatry](https://metaduck.com/tags/computational-psychiatry/)**, curious about how technology might help us understand and support mental health in more human, data-informed ways.
+
+![Me](/images/blog/switzerland.jpeg)
 
 At the very least, I want to connect with people who **care about meaningful work** - people building things that improve lives, not just metrics.
 
