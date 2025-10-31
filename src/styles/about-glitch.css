@@ -29,6 +29,13 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .matrix-rain {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes matrix-fall {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(100vh); }
@@ -59,6 +66,13 @@
   animation: crt-scan-about 5s infinite linear;
   z-index: 10;
   will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .about-crt-distortion::before {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 @keyframes crt-scan-about {
@@ -98,6 +112,14 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .about-glitch-title::before,
+  .about-glitch-title::after {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes glitch-red {
   0%, 100% { transform: translate(0); }
   50% { transform: translate(-1px, 1px); }
@@ -127,6 +149,13 @@
   z-index: 1;
   pointer-events: none;
   will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .about-avatar-glitch::before {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 @keyframes avatar-scan {
@@ -184,6 +213,18 @@
   will-change: background;
 }
 
+@media (max-width: 768px) {
+  .about-cyber-card {
+    animation: none;
+    will-change: auto;
+  }
+  .about-cyber-card::before,
+  .about-cyber-card::after {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes cyber-card-pulse {
   0%, 100% { 
     box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
@@ -232,6 +273,13 @@
   will-change: transform, opacity;
 }
 
+@media (max-width: 768px) {
+  .about-section-header::before {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes section-red-glitch {
   0%, 100% { transform: translate(0); opacity: 0.5; }
   50% { transform: translate(1px, -1px); opacity: 0.3; }
@@ -257,6 +305,13 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .about-cyber-link::before {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes link-scan {
   0% { transform: translateX(-100%); }
   50% { transform: translateX(100%); }
@@ -269,6 +324,13 @@
   /* Reduced animation frequency from 10s to 25s */
   animation: data-corruption 25s infinite;
   will-change: text-shadow;
+}
+
+@media (max-width: 768px) {
+  .about-data-corruption {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 @keyframes data-corruption {
@@ -313,6 +375,13 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .about-holographic::before {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes holographic-scan {
   0% { transform: translateX(-100%) rotate(45deg); }
   100% { transform: translateX(100%) rotate(45deg); }
@@ -345,6 +414,13 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .about-glitch-overlay {
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @keyframes glitch-overlay {
   0% { transform: translateY(0); }
   100% { transform: translateY(2px); }
@@ -370,6 +446,13 @@
   z-index: 1;
   pointer-events: none;
   will-change: background-image;
+}
+
+@media (max-width: 768px) {
+  .about-cyber-noise::before {
+    animation: none;
+    will-change: auto;
+  }
 }
 
 @keyframes cyber-noise {

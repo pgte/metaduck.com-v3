@@ -14,6 +14,13 @@
     touch-action: manipulation;
   }
 
+  /* Disable animations on mobile to save battery */
+  @media (max-width: 768px) {
+    body {
+      animation: none;
+    }
+  }
+
   /* Enhanced CRT scan lines overlay for entire body - reduced frequency */
   body::before {
     content: '';
@@ -36,6 +43,14 @@
     will-change: transform;
   }
 
+  /* Disable animated pseudo-elements on mobile */
+  @media (max-width: 768px) {
+    body::before {
+      animation: none;
+      will-change: auto;
+    }
+  }
+
   /* CRT phosphor persistence effect - reduced frequency */
   body::after {
     content: '';
@@ -55,6 +70,14 @@
     will-change: opacity;
   }
 
+  /* Disable animated pseudo-elements on mobile */
+  @media (max-width: 768px) {
+    body::after {
+      animation: none;
+      will-change: auto;
+    }
+  }
+
   h1 {
     @apply text-4xl font-bold text-green-400 mb-6 font-['Orbitron'] tracking-wider;
     text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
@@ -62,6 +85,13 @@
     animation: title-flare 6s infinite ease-in-out;
     position: relative;
     will-change: text-shadow;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      animation: none;
+      will-change: auto;
+    }
   }
   
   h2 {
@@ -71,6 +101,13 @@
     animation: subtitle-flare 8s infinite ease-in-out;
     will-change: text-shadow;
   }
+
+  @media (max-width: 768px) {
+    h2 {
+      animation: none;
+      will-change: auto;
+    }
+  }
   
   h3 {
     @apply text-2xl font-semibold text-green-400 mt-6 mb-3 font-['Orbitron'] tracking-wide;
@@ -79,6 +116,13 @@
     animation: heading-flare 10s infinite ease-in-out;
     will-change: text-shadow;
   }
+
+  @media (max-width: 768px) {
+    h3 {
+      animation: none;
+      will-change: auto;
+    }
+  }
   
   h4 {
     @apply text-xl font-semibold text-green-400 mt-4 mb-2 font-['Orbitron'] tracking-wide;
@@ -86,6 +130,13 @@
     /* Reduced to single animation */
     animation: subheading-flare 12s infinite ease-in-out;
     will-change: text-shadow;
+  }
+
+  @media (max-width: 768px) {
+    h4 {
+      animation: none;
+      will-change: auto;
+    }
   }
   
   p {
@@ -114,6 +165,16 @@
     animation: text-scan 8s infinite linear;
     pointer-events: none;
     will-change: transform;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      animation: none;
+      will-change: auto;
+    }
+    p::after {
+      display: none;
+    }
   }
   
   a {
@@ -147,6 +208,16 @@
   a:hover::before {
     transform: translateX(100%);
   }
+
+  @media (max-width: 768px) {
+    a {
+      animation: none;
+      will-change: auto;
+    }
+    a::before {
+      display: none;
+    }
+  }
   
   ul, ol {
     @apply mb-4 ml-6;
@@ -167,6 +238,13 @@
     animation: list-glow 18s infinite ease-in-out;
     will-change: text-shadow;
   }
+
+  @media (max-width: 768px) {
+    li {
+      animation: none;
+      will-change: auto;
+    }
+  }
   
   blockquote {
     @apply border-l-4 border-orange-400 pl-4 italic my-4 bg-slate-800/50 p-4 rounded-r-lg;
@@ -174,6 +252,13 @@
     /* Reduced to single animation */
     animation: quote-flare 20s infinite ease-in-out;
     will-change: box-shadow;
+  }
+
+  @media (max-width: 768px) {
+    blockquote {
+      animation: none;
+      will-change: auto;
+    }
   }
   
   table {
@@ -246,6 +331,16 @@
     animation: subtle-scan-line 12s ease-in-out infinite;
     will-change: transform;
   }
+
+  @media (max-width: 768px) {
+    code {
+      animation: none;
+      will-change: auto;
+    }
+    code::before {
+      display: none;
+    }
+  }
   
   pre {
     @apply bg-slate-800/90 p-6 rounded-lg overflow-x-auto my-6 border border-green-500/50;
@@ -274,6 +369,16 @@
     will-change: transform;
   }
 
+  @media (max-width: 768px) {
+    pre {
+      animation: none;
+      will-change: auto;
+    }
+    pre::before {
+      display: none;
+    }
+  }
+
   pre::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
   }
@@ -287,6 +392,13 @@
     /* Reduced animation frequency from 4s to 10s */
     animation: subtle-text-flicker 10s infinite ease-in-out;
     will-change: text-shadow;
+  }
+
+  @media (max-width: 768px) {
+    pre code {
+      animation: none;
+      will-change: auto;
+    }
   }
 
   /* Respect user's motion preferences */
@@ -805,6 +917,12 @@ a:hover, button:hover, .terminal-btn:hover {
   animation: blink 2s infinite, cursor-glow 4s infinite;
 }
 
+@media (max-width: 768px) {
+  a:hover, button:hover, .terminal-btn:hover {
+    animation: none;
+  }
+}
+
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0.7; }
@@ -822,6 +940,12 @@ a:hover, button:hover, .terminal-btn:hover {
 /* CRT cursor blink for code elements - reduced frequency */
 code:hover, pre:hover {
   animation: crt-cursor-blink 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+  code:hover, pre:hover {
+    animation: none;
+  }
 }
 
 @keyframes crt-cursor-blink {
@@ -856,6 +980,12 @@ code:hover, pre:hover {
   @apply bg-slate-800/50 border border-green-500/30 rounded-lg p-0 overflow-hidden;
   box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
   backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .sci-fi-card {
+    backdrop-filter: none;
+  }
 }
 
 .sci-fi-card:hover {
