@@ -25,13 +25,21 @@ They work in a medical unit, and I was listening to them talk about the nightmar
 
 Being the engineer I am, I said those famous last words: "I can probably write a script for that."
 
-Well, you can guess what happened next. Those "few scripts" started to grow. I added a simple UI. Then I added a way to handle shift swaps. Then different roles. Before I knew it, those scripts had evolved into a full-fledged, real-world application.
+### From Scripts to an AI-Powered Scheduler
 
-That application is [TimeClout](https://timeclout.com). It's a tool built from the ground up to solve one of the most tedious and hard parts of managing a team: knowing _who_ works _when_.
+Well, those "few scripts" quickly got more complex. I realized that tracking shifts wasn't the hard part. The _real_ headache was **creating** the schedule in the first place.
 
-### See It in Action: A Quick Demo
+How do you manually balance everyone's time-off requests, ensure fairness, make sure no one is working back-to-back, and follow all the specific rules of the unit?
 
-I can talk about it all day, but it's probably easier to just show you. Here's a quick demo I recorded that walks through the main features, including the "autofill" that finds the best schedule for your team.
+You're basically solving a massive optimization problem by hand.
+
+That's when this project became _really_ interesting. I built a smart "autofill" feature to be the core of [TimeClout](https://timeclout.com). This isn't just about filling boxes; **it's an AI-powered solver.**
+
+You define your rules—things like worker preferences, required time between shifts, and fairness in shift distribution. Then, you just hit a button, and the optimization algorithm searches for the best possible schedule for you. It's designed to turn a multi-hour puzzle into a one-click job.
+
+### See the AI in Action: A Quick Demo
+
+I can talk about it all day, but it's probably easier to just show you. Here's a quick demo I recorded that walks through the main features, especially that AI "autofill" solver that finds the best schedule for your team.
 
 <iframe
   width="560"
@@ -69,7 +77,7 @@ But it's also for any business owner, team lead, or manager who is tired of figh
 
 Today, I'm opening the doors to the **[TimeClout.com](https://timeclout.com) private beta**.
 
-I’m looking for people to kick the tires, schedule some shifts, and let me know what they think. I want to hear what you love, what you hate, and what’s missing.
+I’m looking for people to kick the tires, test the AI scheduler, and let me know what they think. I want to hear what you love, what you hate, and what’s missing.
 
 If you’re ready to ditch the spreadsheet-sized headache, head over and sign up.
 
