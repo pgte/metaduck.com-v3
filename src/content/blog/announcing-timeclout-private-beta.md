@@ -37,6 +37,8 @@ That's when this project became _really_ interesting. I built a smart "autofill"
 
 You define your rules—things like worker preferences, required time between shifts, and fairness in shift distribution. Then, you just hit a button, and the optimization algorithm searches for the best possible schedule for you. It's designed to turn a multi-hour puzzle into a one-click job.
 
+![TimeClout](/images/blog/timeclout-screenshot.png)
+
 ### See the AI in Action: A Quick Demo
 
 I can talk about it all day, but it's probably easier to just show you. Here's a quick demo I recorded that walks through the main features, especially that AI "autofill" solver that finds the best schedule for your team.
