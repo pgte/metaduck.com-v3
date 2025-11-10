@@ -16,6 +16,8 @@ export const UNIFIED_TAGS = [
   "Decipad",
   "Career",
   "TimeClout",
+  "Productivity",
+  "Open-source",
 ] as const;
 
 export type UnifiedTag = (typeof UNIFIED_TAGS)[number];

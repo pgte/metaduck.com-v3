@@ -3,7 +3,7 @@ title: "Introducing TimeClout: A New, Open-Source Tool to End Shift Scheduling H
 description: "Announcing the private beta launch of TimeClout, the open-source, AI-powered tool designed to simplify and optimize shift scheduling for teams."
 author: "Pedro Teixeira"
 date: 2025-11-09
-tags: ["TimeClout"]
+tags: ["TimeClout", "Open-source", "AI & ML"]
 image: "/images/blog/astronauts_at_work.jpg"
 ---
 
