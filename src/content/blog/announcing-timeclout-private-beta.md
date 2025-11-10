@@ -43,15 +43,16 @@ You define your rules—things like worker preferences, required time between sh
 
 I can talk about it all day, but it's probably easier to just show you. Here's a quick demo I recorded that walks through the main features, especially that AI "autofill" solver that finds the best schedule for your team.
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/Vse5eiGUuQY"
-  title="TimeClout private beta: demo"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  allowfullscreen\>
-</iframe\>
+<div class="video-container">
+  <iframe
+    style="width: 100%; aspect-ratio: 16 / 9; height: auto;"
+    src="https://www.youtube.com/embed/Vse5eiGUuQY"
+    title="TimeClout private beta: demo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
 ### What's This "Open-Source" Thing All About?
 
