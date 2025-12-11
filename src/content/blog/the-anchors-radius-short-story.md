@@ -1,6 +1,6 @@
 ---
-title: "THE ANCHOR’S RADIUS"
-description: ""
+title: "THE ANCHOR’S RADIUS - a short story"
+description: "In a world kept afloat by edits and dreams, an anchor’s family stumbles through the forgotten tunnels beneath the Spire—where the discarded, the rewritten, and the erased fight to remember what is real."
 author: "Pedro Teixeira"
 date: 2025-12-11
 tags: ["Sci-fi"]
@@ -42,6 +42,8 @@ But I am full of ghosts. I am the place where the red tower still stands. I am t
 ---
 
 ## CHAPTER 1: THE BLINK
+
+![The Weight of Reality](/images/blog/the-anchors-radius-the-weight-of-reality.png)
 
 **Narrator:** Kael
 
@@ -821,6 +823,8 @@ The Steward thinks he is fighting monsters. He does not realize he has just walk
 
 ## CHAPTER 9: THE CITY OF ROUGH DRAFTS
 
+![The City Of Rough Drafts](/images/blog/the-anchors-radius-the-city-of-rough-drafts.png)
+
 **Narrator:** Kael
 
 The man on the gate didn't blink. He couldn't. His eyelids were tattooed with semicolons.
@@ -1597,6 +1601,8 @@ And he plugs himself in.
 ---
 
 ## CHAPTER 15: THE GREAT SETTLING
+
+![The New Dreamer](/images/blog/the-anchors-radius-the-new-dreamer.png)
 
 **Narrator:** _[The Residue]_
 
