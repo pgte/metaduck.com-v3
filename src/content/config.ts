@@ -18,6 +18,7 @@ export const UNIFIED_TAGS = [
   "TimeClout",
   "Productivity",
   "Open-source",
+  "Sci-fi",
 ] as const;
 
 export type UnifiedTag = (typeof UNIFIED_TAGS)[number];
