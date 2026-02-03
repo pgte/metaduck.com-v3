@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import Mermaid from "../components/Mermaid.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -79,6 +80,7 @@ const relatedArticles = allPosts
 
     <div class="prose prose-lg max-w-none">
       <Content />
+      <Mermaid />
     </div>
   </article>
 

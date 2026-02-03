@@ -1,27 +1,18 @@
 @import "tailwindcss";
 
 @layer base {
+  /* Static CRT/terminal look — no continuous animations to avoid high CPU usage */
   body {
     @apply font-['Space_Grotesk',_system-ui,_sans-serif];
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
     background: 
       radial-gradient(ellipse at center, transparent 0%, rgba(0, 255, 65, 0.02) 50%, transparent 100%),
       linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.1) 100%);
-    /* Reduced animation frequency from 0.1s to 2s */
-    animation: global-flicker 2s infinite;
     position: relative;
-    /* Prevent zoom on mobile */
     touch-action: manipulation;
   }
 
-  /* Disable animations on mobile to save battery */
-  @media (max-width: 768px) {
-    body {
-      animation: none;
-    }
-  }
-
-  /* Enhanced CRT scan lines overlay for entire body - reduced frequency */
+  /* Static CRT scan lines overlay — no animation */
   body::before {
     content: '';
     position: fixed;
@@ -38,20 +29,9 @@
     );
     pointer-events: none;
     z-index: 9999;
-    /* Reduced animation frequency from 0.1s to 3s */
-    animation: crt-scan-lines 3s infinite linear;
-    will-change: transform;
   }
 
-  /* Disable animated pseudo-elements on mobile */
-  @media (max-width: 768px) {
-    body::before {
-      animation: none;
-      will-change: auto;
-    }
-  }
-
-  /* CRT phosphor persistence effect - reduced frequency */
+  /* Static phosphor overlay */
   body::after {
     content: '';
     position: fixed;
@@ -65,126 +45,42 @@
       radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.015) 0%, transparent 50%);
     pointer-events: none;
     z-index: 9998;
-    /* Reduced animation frequency from 0.5s to 4s */
-    animation: phosphor-persistence-global 4s infinite;
-    will-change: opacity;
-  }
-
-  /* Disable animated pseudo-elements on mobile */
-  @media (max-width: 768px) {
-    body::after {
-      animation: none;
-      will-change: auto;
-    }
   }
 
   h1 {
     @apply text-4xl font-bold text-green-400 mb-6 font-['Orbitron'] tracking-wider;
     text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
-    /* Reduced to single animation with longer duration */
-    animation: title-flare 6s infinite ease-in-out;
     position: relative;
-    will-change: text-shadow;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      animation: none;
-      will-change: auto;
-    }
   }
   
   h2 {
     @apply text-3xl font-semibold text-green-400 mt-8 mb-4 font-['Orbitron'] tracking-wide;
     text-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
-    /* Reduced to single animation */
-    animation: subtitle-flare 8s infinite ease-in-out;
-    will-change: text-shadow;
-  }
-
-  @media (max-width: 768px) {
-    h2 {
-      animation: none;
-      will-change: auto;
-    }
   }
   
   h3 {
     @apply text-2xl font-semibold text-green-400 mt-6 mb-3 font-['Orbitron'] tracking-wide;
     text-shadow: 0 0 6px rgba(0, 255, 65, 0.3);
-    /* Reduced to single animation */
-    animation: heading-flare 10s infinite ease-in-out;
-    will-change: text-shadow;
-  }
-
-  @media (max-width: 768px) {
-    h3 {
-      animation: none;
-      will-change: auto;
-    }
   }
   
   h4 {
     @apply text-xl font-semibold text-green-400 mt-4 mb-2 font-['Orbitron'] tracking-wide;
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
-    /* Reduced to single animation */
-    animation: subheading-flare 12s infinite ease-in-out;
-    will-change: text-shadow;
-  }
-
-  @media (max-width: 768px) {
-    h4 {
-      animation: none;
-      will-change: auto;
-    }
   }
   
   p {
     @apply text-green-300 mb-4 leading-7;
     text-shadow: 0 0 3px rgba(0, 255, 65, 0.2);
-    /* Reduced to single subtle animation */
-    animation: text-glow 15s infinite ease-in-out;
     position: relative;
-    will-change: text-shadow;
   }
 
-  p::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 255, 65, 0.01) 50%,
-      transparent
-    );
-    /* Reduced animation frequency from 3s to 8s */
-    animation: text-scan 8s infinite linear;
-    pointer-events: none;
-    will-change: transform;
-  }
-
-  @media (max-width: 768px) {
-    p {
-      animation: none;
-      will-change: auto;
-    }
-    p::after {
-      display: none;
-    }
-  }
+  /* No animated pseudo-element on every paragraph — was a major CPU cost */
   
   a {
-    @apply text-orange-400 hover:text-orange-300 underline transition-colors;
+    @apply text-orange-400 hover:text-orange-300 underline transition-colors duration-200;
     text-shadow: 0 0 5px rgba(251, 146, 60, 0.4);
-    /* Reduced to single animation */
-    animation: link-flare 12s infinite ease-in-out;
     position: relative;
     cursor: pointer;
-    will-change: text-shadow;
   }
 
   a::before {
@@ -202,7 +98,7 @@
     );
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    will-change: transform;
+    pointer-events: none;
   }
 
   a:hover::before {
@@ -210,10 +106,6 @@
   }
 
   @media (max-width: 768px) {
-    a {
-      animation: none;
-      will-change: auto;
-    }
     a::before {
       display: none;
     }
@@ -234,31 +126,11 @@
   li {
     @apply mb-2 text-green-300;
     text-shadow: 0 0 3px rgba(0, 255, 65, 0.2);
-    /* Reduced to single animation */
-    animation: list-glow 18s infinite ease-in-out;
-    will-change: text-shadow;
-  }
-
-  @media (max-width: 768px) {
-    li {
-      animation: none;
-      will-change: auto;
-    }
   }
   
   blockquote {
     @apply border-l-4 border-orange-400 pl-4 italic my-4 bg-slate-800/50 p-4 rounded-r-lg;
     box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.1);
-    /* Reduced to single animation */
-    animation: quote-flare 20s infinite ease-in-out;
-    will-change: box-shadow;
-  }
-
-  @media (max-width: 768px) {
-    blockquote {
-      animation: none;
-      will-change: auto;
-    }
   }
   
   table {
@@ -314,32 +186,6 @@
     font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1;
     position: relative;
     overflow: hidden;
-    /* Reduced animation frequency from 2s to 6s */
-    animation: subtle-flicker 6s infinite ease-in-out;
-    will-change: opacity;
-  }
-
-  code::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.05), transparent);
-    /* Reduced animation frequency from 4s to 12s */
-    animation: subtle-scan-line 12s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  @media (max-width: 768px) {
-    code {
-      animation: none;
-      will-change: auto;
-    }
-    code::before {
-      display: none;
-    }
   }
   
   pre {
@@ -351,32 +197,6 @@
       radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.02) 0%, transparent 50%);
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-    /* Reduced animation frequency from 3s to 8s */
-    animation: subtle-terminal-flicker 8s infinite ease-in-out;
-    will-change: opacity;
-  }
-
-  pre::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #00ff41, transparent);
-    /* Reduced animation frequency from 6s to 15s */
-    animation: subtle-scan-top 15s ease-in-out infinite;
-    will-change: transform;
-  }
-
-  @media (max-width: 768px) {
-    pre {
-      animation: none;
-      will-change: auto;
-    }
-    pre::before {
-      display: none;
-    }
   }
 
   pre::-webkit-scrollbar {
@@ -389,16 +209,6 @@
     font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1;
     position: relative;
     z-index: 1;
-    /* Reduced animation frequency from 4s to 10s */
-    animation: subtle-text-flicker 10s infinite ease-in-out;
-    will-change: text-shadow;
-  }
-
-  @media (max-width: 768px) {
-    pre code {
-      animation: none;
-      will-change: auto;
-    }
   }
 
   /* Respect user's motion preferences */
@@ -912,51 +722,20 @@
   color: #00ff41;
 }
 
-/* Enhanced terminal-style cursor blink effects - reduced frequency */
+/* Hover: transitions only — no continuous keyframe animations to avoid CPU load */
 a:hover, button:hover, .terminal-btn:hover {
-  animation: blink 2s infinite, cursor-glow 4s infinite;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+a, button, .terminal-btn {
+  transition: text-shadow 0.2s ease, color 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  a:hover, button:hover, .terminal-btn:hover {
-    animation: none;
-  }
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0.7; }
-}
-
-@keyframes cursor-glow {
-  0%, 100% { 
-    text-shadow: 0 0 5px rgba(0, 255, 65, 0.4);
-  }
-  50% { 
-    text-shadow: 0 0 8px rgba(0, 255, 65, 0.6), 0 0 12px rgba(0, 255, 65, 0.3);
-  }
-}
-
-/* CRT cursor blink for code elements - reduced frequency */
 code:hover, pre:hover {
-  animation: crt-cursor-blink 1.5s infinite;
+  border-color: rgba(0, 255, 65, 0.5);
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.2), inset 0 0 4px rgba(0, 255, 65, 0.1);
 }
-
-@media (max-width: 768px) {
-  code:hover, pre:hover {
-    animation: none;
-  }
-}
-
-@keyframes crt-cursor-blink {
-  0%, 50% { 
-    border-color: rgba(0, 255, 65, 0.5);
-    box-shadow: 0 0 8px rgba(0, 255, 65, 0.2), inset 0 0 4px rgba(0, 255, 65, 0.1);
-  }
-  51%, 100% { 
-    border-color: rgba(0, 255, 65, 0.2);
-    box-shadow: 0 0 4px rgba(0, 255, 65, 0.1), inset 0 0 2px rgba(0, 255, 65, 0.05);
-  }
+code, pre {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Simplified CRT power-on effect */
@@ -975,17 +754,11 @@ code:hover, pre:hover {
   }
 }
 
-/* Sci-fi card styling */
+/* Sci-fi card styling — no backdrop-filter to avoid heavy compositing */
 .sci-fi-card {
   @apply bg-slate-800/50 border border-green-500/30 rounded-lg p-0 overflow-hidden;
   box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
-  backdrop-filter: blur(10px);
-}
-
-@media (max-width: 768px) {
-  .sci-fi-card {
-    backdrop-filter: none;
-  }
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .sci-fi-card:hover {
@@ -1002,4 +775,13 @@ code:hover, pre:hover {
 .terminal-btn:hover {
   @apply bg-slate-700 border-green-400 text-green-300;
   box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
+}
+
+/* Mermaid diagrams in blog prose: contain and allow horizontal scroll on small screens */
+.prose .mermaid {
+  @apply my-6 overflow-x-auto flex justify-center;
+}
+.prose .mermaid svg {
+  max-width: 100%;
+  height: auto;
 }

@@ -13,6 +13,9 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
+    syntaxHighlight: {
+      excludeLangs: ['mermaid'],
+    },
   },
   integrations: [
     mdx({

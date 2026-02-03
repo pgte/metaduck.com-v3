@@ -1,0 +1,54 @@
+---
+/**
+ * Client-side Mermaid renderer. Loads Mermaid from CDN (no ESM import), finds mermaid code
+ * blocks, replaces them with div.mermaid, and runs mermaid.run() so the diagram renders as SVG.
+ */
+---
+
+<script client:load>
+  function runMermaid() {
+    let blocks = document.querySelectorAll('pre code.language-mermaid, pre code[class*="mermaid"]');
+    if (blocks.length === 0) {
+      const allPre = document.querySelectorAll('pre code');
+      blocks = Array.from(allPre).filter((code) => {
+        const t = (code.textContent || '').trim();
+        return /^\s*(flowchart|graph|sequenceDiagram|erDiagram|classDiagram|stateDiagram|pie|gitGraph|journey)\b/.test(t);
+      });
+    }
+    if (blocks.length === 0) return;
+
+    function render(mermaid) {
+      try {
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+        blocks.forEach((code) => {
+          const pre = code.closest('pre');
+          if (!pre) return;
+          const text = code.textContent?.trim() ?? '';
+          const div = document.createElement('div');
+          div.className = 'mermaid';
+          div.textContent = text;
+          pre.replaceWith(div);
+        });
+        mermaid.run();
+      } catch (err) {
+        console.error('[Mermaid] Failed to render diagrams:', err);
+      }
+    }
+
+    if (window.mermaid) {
+      render(window.mermaid);
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+    script.onload = () => render(window.mermaid);
+    script.onerror = () => console.error('[Mermaid] Failed to load Mermaid from CDN');
+    document.head.appendChild(script);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(runMermaid));
+  } else {
+    requestAnimationFrame(runMermaid);
+  }
+</script>

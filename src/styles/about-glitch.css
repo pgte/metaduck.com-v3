@@ -1,6 +1,5 @@
-/* Wild Glitchy Effects for About Page - Optimized for Performance */
+/* About page glitch/CRT effects — static styles only to avoid high CPU usage */
 
-/* Matrix rain background effect - reduced frequency */
 .about-matrix-bg {
   position: fixed;
   top: 0;
@@ -24,24 +23,9 @@
     rgba(0, 255, 65, 0.02) 50%,
     transparent 100%
   );
-  /* Reduced animation frequency from 20s to 40s */
-  animation: matrix-fall 40s infinite linear;
-  will-change: transform;
 }
 
-@media (max-width: 768px) {
-  .matrix-rain {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes matrix-fall {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100vh); }
-}
-
-/* CRT distortion effect - reduced frequency */
+/* Static CRT scan lines — no animation */
 .about-crt-distortion {
   position: relative;
   overflow: hidden;
@@ -62,25 +46,10 @@
     rgba(0, 255, 65, 0.03) 4px
   );
   pointer-events: none;
-  /* Reduced animation frequency from 0.1s to 5s */
-  animation: crt-scan-about 5s infinite linear;
   z-index: 10;
-  will-change: transform;
 }
 
-@media (max-width: 768px) {
-  .about-crt-distortion::before {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes crt-scan-about {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(4px); }
-}
-
-/* Glitch text effect for main title - simplified */
+/* Glitch title — static offset shadows for depth, no animation */
 .about-glitch-title {
   position: relative;
 }
@@ -93,44 +62,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .about-glitch-title::before {
-  /* Reduced animation frequency from 2s to 8s */
-  animation: glitch-red 8s infinite;
   color: #ff0000;
   z-index: -1;
-  will-change: transform;
+  transform: translate(-1px, 1px);
 }
 
 .about-glitch-title::after {
-  /* Reduced animation frequency from 2.5s to 10s */
-  animation: glitch-blue 10s infinite;
   color: #00ffff;
   z-index: -2;
-  will-change: transform;
+  transform: translate(1px, -1px);
 }
 
-@media (max-width: 768px) {
-  .about-glitch-title::before,
-  .about-glitch-title::after {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes glitch-red {
-  0%, 100% { transform: translate(0); }
-  50% { transform: translate(-1px, 1px); }
-}
-
-@keyframes glitch-blue {
-  0%, 100% { transform: translate(0); }
-  50% { transform: translate(1px, -1px); }
-}
-
-/* Cyberpunk avatar effect - reduced frequency */
 .about-avatar-glitch {
   position: relative;
 }
@@ -142,28 +89,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.1) 50%, transparent 70%);
-  /* Reduced animation frequency from 3s to 12s */
-  animation: avatar-scan 12s infinite linear;
+  background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 65, 0.08) 50%, transparent 70%);
   border-radius: 50%;
   z-index: 1;
   pointer-events: none;
-  will-change: transform;
 }
 
-@media (max-width: 768px) {
-  .about-avatar-glitch::before {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes avatar-scan {
-  0% { transform: translateX(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) rotate(45deg); }
-}
-
-/* Glitchy bio text */
 .about-bio-glitch {
   position: relative;
 }
@@ -172,28 +103,28 @@
   position: relative;
 }
 
-/* Cyberpunk card effects - simplified */
+/* Cyber cards — static glow, no animation */
 .about-cyber-card {
   position: relative;
   overflow: hidden;
-  /* Reduced animation frequency from 6s to 15s */
-  animation: cyber-card-pulse 15s infinite;
-  will-change: box-shadow;
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.12);
+  transition: box-shadow 0.2s ease;
+}
+
+.about-cyber-card:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.2);
 }
 
 .about-cyber-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
-  /* Reduced animation frequency from 4s to 12s */
-  animation: cyber-scan 12s infinite ease-in-out;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 65, 0.05) 50%, transparent 100%);
   z-index: 1;
   pointer-events: none;
-  will-change: transform;
 }
 
 .about-cyber-card::after {
@@ -206,54 +137,10 @@
   background: 
     radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
-  /* Reduced animation frequency from 8s to 20s */
-  animation: cyber-glow 20s infinite;
   z-index: 0;
   pointer-events: none;
-  will-change: background;
 }
 
-@media (max-width: 768px) {
-  .about-cyber-card {
-    animation: none;
-    will-change: auto;
-  }
-  .about-cyber-card::before,
-  .about-cyber-card::after {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes cyber-card-pulse {
-  0%, 100% { 
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
-  }
-  50% { 
-    box-shadow: 0 0 30px rgba(0, 255, 65, 0.2), 0 0 40px rgba(0, 255, 65, 0.1);
-  }
-}
-
-@keyframes cyber-scan {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
-}
-
-@keyframes cyber-glow {
-  0%, 100% { 
-    background: 
-      radial-gradient(circle at 20% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(0, 255, 65, 0.03) 0%, transparent 50%);
-  }
-  50% { 
-    background: 
-      radial-gradient(circle at 40% 40%, rgba(0, 255, 65, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 60% 60%, rgba(0, 255, 65, 0.04) 0%, transparent 50%);
-  }
-}
-
-/* Glitchy section headers - simplified */
 .about-section-header {
   position: relative;
 }
@@ -266,26 +153,11 @@
   width: 100%;
   height: 100%;
   color: #ff0000;
-  opacity: 0.5;
-  /* Reduced animation frequency from 3s to 12s */
-  animation: section-red-glitch 12s infinite;
+  opacity: 0.4;
   z-index: -1;
-  will-change: transform, opacity;
+  transform: translate(1px, -1px);
 }
 
-@media (max-width: 768px) {
-  .about-section-header::before {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes section-red-glitch {
-  0%, 100% { transform: translate(0); opacity: 0.5; }
-  50% { transform: translate(1px, -1px); opacity: 0.3; }
-}
-
-/* Cyberpunk link effects - reduced frequency */
 .about-cyber-link {
   position: relative;
 }
@@ -297,58 +169,22 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.2), transparent);
-  /* Reduced animation frequency from 2s to 8s */
-  animation: link-scan 8s infinite ease-in-out;
+  background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.15), transparent);
   z-index: -1;
   pointer-events: none;
-  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .about-cyber-link::before {
-    animation: none;
-    will-change: auto;
-  }
+.about-cyber-link:hover::before {
+  opacity: 1;
 }
 
-@keyframes link-scan {
-  0% { transform: translateX(-100%); }
-  50% { transform: translateX(100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* Data corruption effect - simplified */
 .about-data-corruption {
   position: relative;
-  /* Reduced animation frequency from 10s to 25s */
-  animation: data-corruption 25s infinite;
-  will-change: text-shadow;
+  text-shadow: 0 0 3px rgba(0, 255, 65, 0.2);
 }
 
-@media (max-width: 768px) {
-  .about-data-corruption {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes data-corruption {
-  0%, 100% { 
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2);
-  }
-  25% { 
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2), 0 0 5px rgba(255, 0, 0, 0.3);
-  }
-  50% { 
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2), 0 0 5px rgba(0, 255, 255, 0.3);
-  }
-  75% { 
-    text-shadow: 0 0 3px rgba(0, 255, 65, 0.2), 0 0 5px rgba(255, 255, 0, 0.3);
-  }
-}
-
-/* Holographic effect for publications - reduced frequency */
 .about-holographic {
   position: relative;
 }
@@ -363,36 +199,20 @@
   background: linear-gradient(
     45deg,
     transparent 0%,
-    rgba(0, 255, 255, 0.1) 25%,
-    rgba(255, 0, 255, 0.1) 50%,
-    rgba(255, 255, 0, 0.1) 75%,
+    rgba(0, 255, 255, 0.06) 25%,
+    rgba(255, 0, 255, 0.06) 50%,
+    rgba(255, 255, 0, 0.06) 75%,
     transparent 100%
   );
-  /* Reduced animation frequency from 4s to 16s */
-  animation: holographic-scan 16s infinite linear;
   z-index: 1;
   pointer-events: none;
-  will-change: transform;
 }
 
-@media (max-width: 768px) {
-  .about-holographic::before {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes holographic-scan {
-  0% { transform: translateX(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) rotate(45deg); }
-}
-
-/* Terminal boot sequence effect */
 .about-boot-sequence {
   position: relative;
 }
 
-/* Glitch overlay for entire page - reduced frequency */
+/* Static glitch overlay — no animation */
 .about-glitch-overlay {
   position: fixed;
   top: 0;
@@ -409,24 +229,8 @@
     rgba(255, 0, 0, 0.1) 1px,
     rgba(255, 0, 0, 0.1) 2px
   );
-  /* Reduced animation frequency from 0.1s to 8s */
-  animation: glitch-overlay 8s infinite linear;
-  will-change: transform;
 }
 
-@media (max-width: 768px) {
-  .about-glitch-overlay {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes glitch-overlay {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(2px); }
-}
-
-/* Cyberpunk noise effect - simplified */
 .about-cyber-noise {
   position: relative;
 }
@@ -441,50 +245,12 @@
   background-image: 
     radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.02) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(0, 255, 65, 0.02) 0%, transparent 50%);
-  /* Reduced animation frequency from 10s to 30s */
-  animation: cyber-noise 30s infinite;
   z-index: 1;
   pointer-events: none;
-  will-change: background-image;
 }
 
-@media (max-width: 768px) {
-  .about-cyber-noise::before {
-    animation: none;
-    will-change: auto;
-  }
-}
-
-@keyframes cyber-noise {
-  0%, 100% { 
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(0, 255, 65, 0.02) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(0, 255, 65, 0.02) 0%, transparent 50%);
-  }
-  50% { 
-    background-image: 
-      radial-gradient(circle at 45% 45%, rgba(0, 255, 65, 0.04) 0%, transparent 50%),
-      radial-gradient(circle at 55% 55%, rgba(0, 255, 65, 0.04) 0%, transparent 50%);
-  }
-}
-
-/* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .about-matrix-bg,
-  .about-crt-distortion::before,
-  .about-glitch-title::before,
-  .about-glitch-title::after,
-  .about-avatar-glitch::before,
-  .about-cyber-card,
-  .about-cyber-card::before,
-  .about-cyber-card::after,
-  .about-section-header::before,
-  .about-cyber-link::before,
-  .about-data-corruption,
-  .about-holographic::before,
-  .about-glitch-overlay,
-  .about-cyber-noise::before {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+  .about-cyber-link::before {
+    transition: none;
   }
-} 
+}
