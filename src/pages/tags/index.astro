@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import { UNIFIED_TAGS } from "../../content/config";
 
-const posts = await getCollection("blog");
+const posts = (await getCollection("blog")).filter((p) => !p.data.hidden);
 
 // Count articles per tag
 const tagCounts = UNIFIED_TAGS.map((tag) => ({
@@ -38,15 +38,17 @@ tagCounts.sort((a, b) => b.count - a.count);
         tagCounts.map(({ tag, count, slug }) => (
           <a
             href={`/tags/${slug}`}
-            class="sci-fi-card p-6 hover:scale-105 transition-transform cursor-pointer group"
+            class="sci-fi-card hover:scale-105 transition-transform cursor-pointer group block"
           >
-            <h2 class="text-xl font-bold text-green-400 mb-2 font-['Orbitron'] tracking-wide group-hover:text-green-300 transition-colors">
-              {tag}
-            </h2>
-            <p class="text-green-300/70 text-sm">
-              {count} article{count === 1 ? "" : "s"}
-            </p>
-            <div class="mt-4 text-orange-400 text-sm font-mono">Browse →</div>
+            <div class="p-6">
+              <h2 class="text-xl font-bold text-green-400 mb-2 font-['Orbitron'] tracking-wide group-hover:text-green-300 transition-colors">
+                {tag}
+              </h2>
+              <p class="text-green-300/70 text-sm">
+                {count} article{count === 1 ? "" : "s"}
+              </p>
+              <div class="mt-4 text-orange-400 text-sm font-mono">Browse →</div>
+            </div>
           </a>
         ))
       }

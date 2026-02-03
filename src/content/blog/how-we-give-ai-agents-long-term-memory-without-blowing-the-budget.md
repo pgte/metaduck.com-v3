@@ -5,6 +5,7 @@ author: "Pedro Teixeira"
 date: 2026-02-05
 tags: ["AI & ML", "Architecture", "Data & Databases"]
 image: "/images/blog/robots-with-brains.jpg"
+hidden: true
 ---
 
 

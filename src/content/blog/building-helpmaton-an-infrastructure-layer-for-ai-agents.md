@@ -5,6 +5,7 @@ author: "Pedro Teixeira"
 date: 2026-02-03
 tags: ["AI & ML", "Architecture", "Development", "TimeClout", "Productivity"]
 image: "/images/blog/robots.jpg"
+hidden: true
 ---
 
 ![Robots](/images/blog/robots.jpg)

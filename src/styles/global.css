@@ -67,6 +67,37 @@
     @apply text-xl font-semibold text-green-400 mt-4 mb-2 font-['Orbitron'] tracking-wide;
     text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
   }
+
+  /* Blog posts: body text with slight green tint, headings stay green, slightly larger reading font */
+  .blog-prose {
+    @apply text-lg;
+    color: #e8f5e8;
+    text-shadow: 0 0 3px rgba(232, 245, 232, 0.2);
+  }
+  .blog-prose h1,
+  .blog-prose h2,
+  .blog-prose h3,
+  .blog-prose h4 {
+    @apply text-green-400;
+  }
+  .blog-prose p,
+  .blog-prose li {
+    @apply text-lg leading-8;
+    color: #e8f5e8;
+    text-shadow: 0 0 3px rgba(232, 245, 232, 0.2);
+  }
+  .blog-prose td {
+    color: #e8f5e8;
+    text-shadow: 0 0 2px rgba(232, 245, 232, 0.15);
+  }
+  .blog-prose code {
+    color: #e2f2e2;
+    text-shadow: 0 0 2px rgba(226, 242, 226, 0.25);
+  }
+  .blog-prose pre code {
+    color: #d8ecd8;
+    text-shadow: 0 0 2px rgba(216, 236, 216, 0.2);
+  }
   
   p {
     @apply text-green-300 mb-4 leading-7;

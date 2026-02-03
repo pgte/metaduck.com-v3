@@ -15,12 +15,13 @@ const { post, allPosts } = Astro.props;
 const { title, description, date, author, tags } = post.data;
 const { Content } = await post.render();
 
-// Calculate related articles
+// Calculate related articles (exclude hidden posts from suggestions)
+const visiblePosts = allPosts.filter((p) => !p.data.hidden);
 const currentTags = tags || [];
-const relatedArticles = allPosts
+const relatedArticles = visiblePosts
   .filter((p) => p.slug !== post.slug && p.data.tags && p.data.tags.length > 0)
   .map((p) => {
-    const sharedTags = p.data.tags.filter((tag) => currentTags.includes(tag));
+    const sharedTags = (p.data.tags ?? []).filter((tag) => currentTags.includes(tag));
     return {
       post: p,
       sharedTagCount: sharedTags.length,
@@ -41,7 +42,7 @@ const relatedArticles = allPosts
 ---
 
 <Layout title={title} description={description}>
-  <article class="max-w-4xl mx-auto">
+  <article class="max-w-4xl mx-auto bg-slate-950/70 rounded-2xl px-6 py-10 md:px-12 md:py-12">
     <header class="mb-12">
       <h1
         class="text-5xl font-bold text-green-400 mb-4 font-['Orbitron'] tracking-wider"
@@ -78,7 +79,7 @@ const relatedArticles = allPosts
       }
     </header>
 
-    <div class="prose prose-lg max-w-none">
+    <div class="prose prose-xl max-w-none blog-prose">
       <Content />
       <Mermaid />
     </div>

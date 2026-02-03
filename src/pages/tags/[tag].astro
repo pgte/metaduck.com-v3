@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 import { UNIFIED_TAGS } from "../../content/config";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = (await getCollection("blog")).filter((p) => !p.data.hidden);
 
   // Create a path for each tag
   const tagPaths = UNIFIED_TAGS.map((tag) => {
