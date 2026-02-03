@@ -88,7 +88,7 @@ flowchart LR
 
 The graph stores **structured facts** ([subject–predicate–object](https://en.wikipedia.org/wiki/Semantic_triple) triples) per agent and answers questions like *“What do we know about Alice?”* via **entity-based lookup**. It complements **vector memory**, which is best for *“what was said when”* and semantic similarity.
 
-- **Stack:** [DuckDB](https://duckdb.org/) in-process with the [DuckPGQ](https://duckdb.org/docs/extensions/duckpgq.html) extension for [property-graph](https://en.wikipedia.org/wiki/Graph_database) queries; data persisted as [Apache Parquet](https://parquet.apache.org/) in S3.
+- **Stack:** [DuckDB](https://duckdb.org/) in-process with the [DuckPGQ](https://duckdb.org/community_extensions/extensions/duckpgq.html) extension for [property-graph](https://en.wikipedia.org/wiki/Graph_database) queries; data persisted as [Apache Parquet](https://parquet.apache.org/) in S3.
 
 - **Storage:** One `facts` table per agent at `s3://bucket/graphs/{workspaceId}/{agentId}/facts.parquet`. Schema: `id`, `source_id`, `target_id`, `label`, `properties` (e.g. confidence, conversationId, updatedAt).
 
@@ -162,7 +162,7 @@ Older data is pruned per grain so storage stays predictable.
 
 ## Implementation details engineers care about
 
-- **LanceDB:** [Vector database](https://en.wikipedia.org/wiki/Vector_database) per grain (and per time period for non-working); S3 path layout as above. See [LanceDB documentation](https://lancedb.github.io/lancedb/).
+- **LanceDB:** [Vector database](https://en.wikipedia.org/wiki/Vector_database) per grain (and per time period for non-working); S3 path layout as above. See [LanceDB documentation](https://docs.lancedb.com).
 - **Graph (knowledge base):** DuckDB + DuckPGQ; single `facts` edge table per agent; memory extraction writes via [memoryExtraction.ts](https://github.com/djinilabs/helpmaton/blob/main/apps/backend/src/utils/memory/memoryExtraction.ts#L407); entity-based retrieval in [graphSearch.ts](https://github.com/djinilabs/helpmaton/blob/main/apps/backend/src/utils/knowledgeInjection/graphSearch.ts#L19). See the [graph database doc](https://github.com/djinilabs/helpmaton/blob/main/docs/graph-database.md#L1).
 - **Embeddings:** One model for all facts and summaries (OpenRouter; [text embeddings](https://en.wikipedia.org/wiki/Word_embedding) for semantic similarity); API key/credits and BYOK are supported where relevant.
 - **Testing:** An [integration test](https://github.com/djinilabs/helpmaton/blob/main/apps/backend/src/utils/memory/__tests__/memorySystem.integration.test.ts#L1) runs the full pipeline (conversations → working → … → yearly), retention cleanup, and search; LLM, embeddings, and SQS are mocked.
