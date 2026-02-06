@@ -2,10 +2,9 @@
 title: "Building Helpmaton: An Infrastructure Layer for AI Agents"
 description: "How building Helpmaton — a robust infrastructure layer for AI agents—helped transform one-off scripts into reliable, context-aware, and continuously evaluated AI workflows for projects like TimeClout."
 author: "Pedro Teixeira"
-date: 2026-02-03
+date: 2026-02-06
 tags: ["AI & ML", "Architecture", "Development", "TimeClout", "Productivity"]
 image: "/images/blog/robots.jpg"
-hidden: true
 ---
 
 ![Robots](/images/blog/robots.jpg)
