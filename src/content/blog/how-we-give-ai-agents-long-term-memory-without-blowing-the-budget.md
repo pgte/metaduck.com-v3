@@ -2,10 +2,9 @@
 title: "How We Give AI Agents Long-Term Memory Without Blowing the Budget"
 description: "How we give AI agents long-term memory without blowing the budget: time-stratified vector memory (six grains, progressive summarization) plus a graph knowledge base for structured facts, with bounded storage and semantic search."
 author: "Pedro Teixeira"
-date: 2026-02-05
+date: 2026-02-08
 tags: ["AI & ML", "Architecture", "Data & Databases"]
 image: "/images/blog/robots-with-brains.jpg"
-hidden: true
 ---
 
 
