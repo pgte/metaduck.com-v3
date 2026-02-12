@@ -8,8 +8,6 @@ image: "/images/blog/robots-with-brains.jpg"
 ---
 
 
-
-
 ![Robots with brains](/images/blog/robots-with-brains.jpg)
 
 Giving agents **long-term memory** is hard: [context windows](https://en.wikipedia.org/wiki/Context_window) are limited, storing every raw message is expensive, and retrieval has to be both fast and relevant. We solved this with a **time-stratified** design: organize memory by temporal grain, summarize progressively, and pair it with a **graph-based knowledge base** for structured facts. Here’s how it works under the hood.

@@ -3,7 +3,7 @@ title: "Subscription-Based API Throttling Without Client API Keys"
 description: "How to implement tiered API throttling in AWS API Gateway using subscriptions, without requiring clients to send or manage API keys. Learn how to map subscriptions to usage plans with a custom Lambda authorizer for seamless and secure rate limiting."
 author: "Pedro Teixeira"
 date: 2026-02-12
-tags: []
+tags: ["Helpmaton", "Open-source", "AI & ML", "Serverless", "Web Development", "Architecture", "Performance"]
 image: "/images/blog/astronauts-forming-queue.png"
 ---
 
