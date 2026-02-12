@@ -808,11 +808,46 @@ code, pre {
   box-shadow: 0 0 15px rgba(0, 255, 65, 0.3);
 }
 
-/* Mermaid diagrams in blog prose: contain and allow horizontal scroll on small screens */
-.prose .mermaid {
-  @apply my-6 overflow-x-auto flex justify-center;
+/* Mermaid diagrams in blog prose: click to expand/collapse */
+.prose .mermaid-chart-wrapper {
+  @apply my-6 flex flex-col items-center gap-2 cursor-pointer;
+  overflow-x: auto;
+  overflow-y: visible;
+  width: 100%;
+  transition: width 0.35s ease, margin 0.35s ease;
+}
+.prose .mermaid-chart-wrapper:hover {
+  @apply opacity-95;
+}
+.prose .mermaid-chart-wrapper .mermaid {
+  @apply flex justify-center bg-slate-950 py-6 px-4 rounded-lg;
+  width: 100%;
+  transition: box-shadow 0.2s ease, transform 0.35s ease;
+  transform-origin: center center;
+}
+.prose .mermaid-chart-wrapper:hover .mermaid {
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.15);
+}
+.prose .mermaid-chart-wrapper.mermaid-expanded {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  overflow: visible;
+}
+.prose .mermaid-chart-wrapper.mermaid-expanded .mermaid {
+  @apply rounded-none;
+  transform: scale(1.06);
+}
+.prose .mermaid-expand-hint {
+  @apply text-xs font-mono text-green-400/80 px-2 py-1 rounded border border-green-500/30;
+  transition: all 0.2s ease;
+}
+.prose .mermaid-chart-wrapper:hover .mermaid-expand-hint {
+  @apply text-green-400 border-green-500/50;
+  box-shadow: 0 0 8px rgba(0, 255, 65, 0.15);
 }
 .prose .mermaid svg {
+  width: 100%;
   max-width: 100%;
   height: auto;
 }

@@ -24,12 +24,63 @@
           const pre = code.closest('pre');
           if (!pre) return;
           const text = code.textContent?.trim() ?? '';
+          const wrapper = document.createElement('div');
+          wrapper.className = 'mermaid-chart-wrapper';
           const div = document.createElement('div');
           div.className = 'mermaid';
           div.textContent = text;
-          pre.replaceWith(div);
+          wrapper.appendChild(div);
+          const hint = document.createElement('span');
+          hint.className = 'mermaid-expand-hint';
+          hint.textContent = 'Click to enlarge';
+          hint.setAttribute('aria-hidden', 'true');
+          wrapper.appendChild(hint);
+          pre.replaceWith(wrapper);
         });
-        mermaid.run();
+        Promise.resolve(mermaid.run()).then(() => {
+          document.querySelectorAll('.mermaid-chart-wrapper').forEach((wrapper) => {
+            const hint = wrapper.querySelector('.mermaid-expand-hint');
+            wrapper.addEventListener('click', () => {
+              const isExpanding = !wrapper.classList.contains('mermaid-expanded');
+              if (isExpanding) {
+                const startWidth = wrapper.getBoundingClientRect().width;
+                wrapper.style.width = `${startWidth}px`;
+                wrapper.style.marginLeft = '0';
+                wrapper.style.marginRight = '0';
+                wrapper.classList.add('mermaid-expanded');
+                requestAnimationFrame(() => {
+                  requestAnimationFrame(() => {
+                    wrapper.style.width = '100vw';
+                    wrapper.style.marginLeft = 'calc(50% - 50vw)';
+                    wrapper.style.marginRight = 'calc(50% - 50vw)';
+                  });
+                });
+              } else {
+                const currentWidth = wrapper.getBoundingClientRect().width;
+                const parentWidth = wrapper.parentElement?.getBoundingClientRect().width ?? currentWidth;
+                wrapper.style.width = `${currentWidth}px`;
+                wrapper.style.marginLeft = 'calc(50% - 50vw)';
+                wrapper.style.marginRight = 'calc(50% - 50vw)';
+                wrapper.classList.remove('mermaid-expanded');
+                requestAnimationFrame(() => {
+                  requestAnimationFrame(() => {
+                    wrapper.style.width = `${parentWidth}px`;
+                    wrapper.style.marginLeft = '0';
+                    wrapper.style.marginRight = '0';
+                    setTimeout(() => {
+                      wrapper.style.width = '';
+                      wrapper.style.marginLeft = '';
+                      wrapper.style.marginRight = '';
+                    }, 350);
+                  });
+                });
+              }
+              if (hint) {
+                hint.textContent = isExpanding ? 'Click to collapse' : 'Click to enlarge';
+              }
+            });
+          });
+        });
       } catch (err) {
         console.error('[Mermaid] Failed to render diagrams:', err);
       }
