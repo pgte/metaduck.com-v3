@@ -1,106 +1,35 @@
 ---
-const ADS = [
-  {
-    title: "Stop Juggling AI Agents",
-    body: "Organize your AI assistants into simple, team-ready workspaces. Connect Gmail, Notion, and Slack in minutes—no complex setup required.",
-    cta: "Know more",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "No More Surprise AI Bills",
-    body: "Take total control of your AI spend with per-agent budget limits. Use your own API keys or flexible credits to scale without the stress.",
-    cta: "Know more",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "Put Your AI on Autopilot",
-    body: "Run recurring reports, monitor updates, and automate workflows on a schedule. Build AI agents that remember context and handle the busy work.",
-    cta: "Know more",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "AI Built for Your Team Chat",
-    body: "Deploy smart bots directly into Slack or Discord. Give your team instant answers and better support right where they already work.",
-    cta: "Know more",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "The OS for Your AI Agents",
-    body: "Don't waste time building infrastructure. Get state management, reliability layers, and long-term memory out of the box. Open-source and ready to scale.",
-    cta: "View on GitHub",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "AI That Actually Remembers",
-    body: "Stop losing context in long conversations. Our hybrid memory combines GraphDB and Vector Search so your agents recall the right details at the right time.",
-    cta: "Optimize Your Context",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "Is Your AI Hallucinating?",
-    body: "Stop guessing and start measuring. Use \"Judge\" models to score your agent's accuracy in real-time. Spot errors and drift before your customers do.",
-    cta: "Improve Accuracy",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "Connect Your Stack in Seconds",
-    body: "Tired of fighting with OAuth? Helpmaton handles the authentication for Google Workspace, Notion, and more, so your agents can get to work immediately.",
-    cta: "See Integrations",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "Find Leads While You Sleep",
-    body: "Deploy agents that monitor social platforms and triage leads automatically. Distinguish between real buyers and general noise with high-precision AI.",
-    cta: "Automate My Sales",
-    url: "https://helpmaton.com",
-  },
-  {
-    title: "Your Keys, Your Choice",
-    body: "Connect your own API keys via OpenRouter. Use GPT-4, Claude, or Llama models interchangeably while Helpmaton handles the orchestration logic.",
-    cta: "Connect My Models",
-    url: "https://helpmaton.com",
-  },
-] as const;
+const AD_URLS = [
+  "https://helpmaton.com/ads/memory",
+  "https://helpmaton.com/ads/automation",
+  "https://helpmaton.com/ads/support",
+  "https://helpmaton.com/ads/beyond-chat",
+  "https://helpmaton.com/ads/choose-any-ai",
+  "https://helpmaton.com/ads/notion-for-agents",
+];
 ---
 
-<aside class="sci-fi-card relative" aria-label="Ad: Helpmaton">
-  <div class="p-6">
+<aside class="sci-fi-card relative border-0" aria-label="Ad: Helpmaton">
+  <div class="p-0">
     <span
-      class="absolute top-2 right-2 text-[10px] uppercase tracking-wider text-green-400/70 font-['Orbitron'] border border-green-500/30 px-2 py-0.5 rounded"
+      class="absolute top-2 right-2 text-[10px] uppercase tracking-wider text-green-400/70 font-['Orbitron'] px-2 py-0.5 rounded"
       aria-hidden="true"
     >
       Ad
     </span>
-    <p class="text-green-400/80 text-xs font-['Orbitron'] tracking-wider mb-1.5">
-      Helpmaton
-    </p>
-    {
-      ADS.map((ad) => (
-        <div class="helpmaton-ad-variant hidden" data-ad>
-          <h3 class="text-lg font-bold text-green-400 mb-2 font-['Orbitron'] tracking-wide">
-            {ad.title}
-          </h3>
-          <p class="text-green-300/90 text-sm mb-4 leading-relaxed">
-            {ad.body}
-          </p>
-          <a
-            href={ad.url}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            class="inline-block border border-green-400/50 text-green-400 px-4 py-2 rounded font-['Orbitron'] text-sm tracking-wide hover:bg-green-400/10 hover:border-green-400 transition-colors"
-          >
-            {ad.cta}
-          </a>
-        </div>
-      ))
-    }
+    <iframe
+      id="helpmaton-ad-iframe"
+      class="w-full rounded bg-slate-900/50"
+      style="min-height: 320px;"
+      loading="lazy"
+    />
   </div>
 </aside>
-<script is:inline>
+<script is:inline define:vars={{ adUrls: AD_URLS }}>
   (function () {
-    const variants = document.querySelectorAll(".helpmaton-ad-variant");
-    if (variants.length === 0) return;
-    const i = Math.floor(Math.random() * variants.length);
-    variants[i].classList.remove("hidden");
+    const iframe = document.getElementById("helpmaton-ad-iframe");
+    if (!iframe || !adUrls || adUrls.length === 0) return;
+    const i = Math.floor(Math.random() * adUrls.length);
+    iframe.src = adUrls[i];
   })();
 </script>
