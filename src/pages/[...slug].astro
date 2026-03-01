@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const { post, allPosts } = Astro.props;
-const { title, description, date, author, tags } = post.data;
+const { title, description, date, author, tags, image } = post.data;
 const { Content } = await post.render();
 
 // Calculate related articles (exclude hidden posts from suggestions)
@@ -42,7 +42,7 @@ const relatedArticles = visiblePosts
   .map((item) => item.post);
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} image={image} url={Astro.url.href}>
   <div class="flex flex-col lg:flex-row gap-8 lg:gap-10 max-w-7xl mx-auto">
     <div class="min-w-0 flex-1 relative z-10">
       <article class="max-w-4xl mx-auto lg:mx-0 bg-slate-950/70 rounded-2xl px-6 py-10 md:px-12 md:py-12">

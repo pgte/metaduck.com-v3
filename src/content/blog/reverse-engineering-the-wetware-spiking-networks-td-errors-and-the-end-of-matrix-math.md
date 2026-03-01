@@ -1,6 +1,6 @@
 ---
 title: "Reverse-Engineering the Wetware: Spiking Networks, TD Errors, and the End of Matrix Math"
-description: ""
+description: "An engineer-friendly deep dive into how the human brain truly processes information, learns without backpropagation, and uses spiking neural networks, predictive coding, and dopamine-driven TD errors—challenging our notions of AI and matrix math."
 author: "Pedro Teixeira"
 date: 2026-03-01
 tags: ["AI & ML", "Computational Psychiatry"]
