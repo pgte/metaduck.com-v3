@@ -12,7 +12,7 @@ image: "/images/blog/astronaut-neurons.png"
 
 If you’ve been following my recent posts on Metaduck, you know I spend my days building infrastructure for AI agents and wrangling LLMs into production. As software engineers, we’re used to treating neural networks as massive, static mathematical graphs powered by [backpropagation](https://en.wikipedia.org/wiki/Backpropagation) and matrix multiplication running on beefy GPUs (e.g. with [PyTorch](https://pytorch.org/) or similar).
 
-But lately, I’ve been diving deep into computational neuroscience (shoutout to the [Computational Psychiatry course](https://www.coursera.org/learn/computational-psychiatry) that sent me down this rabbit hole). And it turns out, the biological wetware in our skulls works fundamentally differently than the models we build in PyTorch.
+But lately, I’ve been diving deep into computational neuroscience (shoutout to the [Computational Psychiatry course](https://www.translationalneuromodeling.org/cpcourse/) that sent me down this rabbit hole). And it turns out, the biological wetware in our skulls works fundamentally differently than the models we build in PyTorch.
 
 Today, I want to give you an engineer-friendly introduction to how the human brain *actually* processes information, how it learns without using calculus, and what this means for the future of AI. Let’s debug the most complex system we know.
 
