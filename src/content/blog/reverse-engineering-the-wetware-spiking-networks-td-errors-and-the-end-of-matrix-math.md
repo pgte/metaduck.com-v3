@@ -89,7 +89,7 @@ We are currently watching AI and neuroscience completely converge. By combining 
 
 If you’re AI-curious and want to tinker with these concepts in code, check out open-source projects like [**Nengo**](https://www.nengo.ai/) (for building large-scale spiking networks) or [**pymdp**](https://github.com/infer-actively/pymdp) (for [Active Inference](https://en.wikipedia.org/wiki/Active_inference) and predictive coding).
 
-Until next time, keep debugging.
+Until next time,
 
 Pedro
 
