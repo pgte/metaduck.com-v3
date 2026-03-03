@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Mermaid from "../components/Mermaid.astro";
 import HelpmatonAd from "../components/HelpmatonAd.astro";
+import HelpmatonArticleCTA from "../components/HelpmatonArticleCTA.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -85,6 +86,7 @@ const relatedArticles = visiblePosts
     <div class="prose prose-xl max-w-none blog-prose">
       <Content />
       <Mermaid />
+      <HelpmatonArticleCTA />
     </div>
   </article>
 
